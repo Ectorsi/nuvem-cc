@@ -1,13 +1,12 @@
 import { useCallback, useEffect, useState } from "react";
 import axios from "axios";
-import { Pokemon } from "../@types/types";
+import { PokemonItem, PokemonList } from "../@types/types";
 
 const useFetchPokemons = () => {
-    const [pokemonsListState, setPokemonsListState] = useState<Pokemon>({} as Pokemon);
+    const [pokemonsListState, setPokemonsListState] = useState<PokemonItem[]>();
     const fetchPokemons = useCallback(async () => {
-        const { data } = await axios.get<Pokemon>('https://pokeapi.co/api/v2/pokemon/?limit=10');
-        setPokemonsListState(data);
-        console.log(data);
+        const { data } = await axios.get<PokemonList>('https://pokeapi.co/api/v2/pokemon/?limit=10');
+        setPokemonsListState(data.results);
     }, []);
 
     useEffect(() => {
