@@ -1,7 +1,7 @@
 import React, { useMemo } from "react";
 import * as S from "./styles";
-import { PokemonDetail } from "../../../pages/HomePage/main";
 import PokeCard from "../../Molecules/PokeCard/main";
+import { PokemonDetail } from "../../../@types/types";
 
 type PokeListProps = {
     pokemonList: PokemonDetail[],
