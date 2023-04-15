@@ -2,9 +2,9 @@ import React from "react";
 import * as S from "./styles";
 
 type PokeCardProps = {
-    name: string,
-    rest?: any,
-}
+    name: string;
+    rest?: any;
+};
 
 const PokeCard = ({ name, ...rest }: PokeCardProps) => {
     return (
