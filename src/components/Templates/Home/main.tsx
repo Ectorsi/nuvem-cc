@@ -3,7 +3,7 @@ import PageTitle from "../../Atoms/PageTitle/main";
 
 import * as S from "./styles";
 import PokeList from "../../Organisms/PokeList/main";
-import { PokemonDetail } from "../../../pages/HomePage/main";
+import { PokemonDetail } from "../../../@types/types";
 
 type HomeTemplate = {
     pokemonList: PokemonDetail[],
