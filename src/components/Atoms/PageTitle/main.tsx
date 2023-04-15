@@ -1,4 +1,5 @@
 import * as React from 'react';
+import * as S from './styles';
 
 type PageTitleProps = {
     title: string,
@@ -6,7 +7,9 @@ type PageTitleProps = {
 
 const PageTitle = ({ title }: PageTitleProps) => {
     return (
-        <h1>{title}</h1>
+        <S.Container>
+            {title}
+        </S.Container>
     )
 };
 

@@ -15,7 +15,6 @@ const GlobalStyles = createGlobalStyle`
     body{
         -webkit-font-smoothing: antialiased;
         background-color: #f4f4f4;
-        margin-top: 35px;
     }
     body, input, button {
     font-family: 'Roboto', sans-serif;
