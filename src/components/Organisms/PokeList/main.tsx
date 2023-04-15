@@ -1,16 +1,27 @@
 import React, { useMemo } from "react";
 import * as S from "./styles";
 import PokeCard from "../../Molecules/PokeCard/main";
-import { PokemonDetail } from "../../../@types/types";
+import { PokemonDetails, PokemonItem, PokemonList } from "../../../@types/types";
 
 type PokeListProps = {
-    pokemonList: PokemonDetail[],
+    pokemonListType: PokemonList,
+    pokemonDetailsType: PokemonDetails,
+    handlePokemonDetailsProp: (pokemonName: string) => void,
 }
 
-const PokeList = ({ pokemonList }: PokeListProps) => {
+const PokeList = ({ pokemonListType, pokemonDetailsType, handlePokemonDetailsProp }: PokeListProps) => {
+    console.log('pokemonList', pokemonListType);
+
     const renderPokeList = useMemo(() => {
-        return pokemonList?.map((pokemon: PokemonDetail) => (<PokeCard key={pokemon.name} name={pokemon.name} />))
-    }, [pokemonList]);
+        return pokemonListType?.results?.map((pokemon: PokemonItem) => (
+            <PokeCard
+                key={pokemon.pokemonName}
+                pokeName={pokemon.pokemonName}
+                pokemonDetailsType={pokemonDetailsType}
+                handlePokemonDetailsProp={handlePokemonDetailsProp}
+            />
+        ))
+    }, [pokemonListType]);
     return (
         <S.Container>
             {renderPokeList ? (

@@ -3,17 +3,23 @@ import PageTitle from "../../Atoms/PageTitle/main";
 
 import * as S from "./styles";
 import PokeList from "../../Organisms/PokeList/main";
-import { PokemonDetail } from "../../../@types/types";
+import { PokemonDetails, PokemonList } from "../../../@types/types";
 
 type HomeTemplate = {
-    pokemonList: PokemonDetail[],
+    pokemonListType: PokemonList,
+    pokemonDetailsType: PokemonDetails,
+    handlePokemonDetailsProp: (pokeName: string) => void,
 }
 
-const HomeTemplate = ({ pokemonList }: HomeTemplate) => {
+const HomeTemplate = ({ pokemonListType, pokemonDetailsType, handlePokemonDetailsProp }: HomeTemplate) => {
     return (
         <S.Container>
             <PageTitle title="Pokedéx" />
-            <PokeList pokemonList={pokemonList} />
+            <PokeList
+                pokemonListType={pokemonListType}
+                pokemonDetailsType={pokemonDetailsType}
+                handlePokemonDetailsProp={handlePokemonDetailsProp}
+            />
         </S.Container>
     );
 };

@@ -4,7 +4,8 @@ import { render, screen } from "@testing-library/react";
 import PokeCard from './main';
 
 const mockPokeCard = {
-    name: "pikachu",
+    pokename: "pikachu",
+    isOpen: true,
 };
 
 describe('PokeCard unit test', () => {
