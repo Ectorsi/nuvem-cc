@@ -4,7 +4,8 @@ import PokeCard from './main';
 
 const mockPokeCard = {
     name: "pikachu",
-    isOpen: true,
+    handleShowModal: jest.fn(),
+    handleSelectPokemon: jest.fn(),
 };
 
 describe('PokeCard unit test', () => {

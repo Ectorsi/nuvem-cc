@@ -1,37 +1,36 @@
-import axios from "axios";
-import { useCallback, useEffect, useState } from "react";
+import { useState } from "react";
+import { GetPokemonDetailReturn, getPokemonDetails } from "../domains/pokemon/pokemonDomain";
 
-type Ability = {
-    ability: {
-        name: string;
-    };
-}
+type UseFetchPokemonDetailsReturn = {
+    pokemonDetails: GetPokemonDetailReturn | null;
+    handleSelectPokemon: (pokemonName: string) => Promise<void>;
+    isPokemonDetailsLoading: boolean;
+    handleShowModal: () => void;
+};
 
-type PokemonDetailed = {
-    abilities: Ability[];
-    sprites: {
-        front_default: string;
+const useFetchPokemonDetails = (): UseFetchPokemonDetailsReturn => {
+    const [pokemonDetails, setPokemonDetails] = useState<GetPokemonDetailReturn | null>(null);
+    const [isPokemonDetailsLoading, setIsPokemonDetailsLoading] = useState(false);
+    const [isPokemonDetailModalOpen, setIsPokemonDetailModalOpen] = useState(false);
+
+    const handleShowModal = () => {
+        setIsPokemonDetailModalOpen(!isPokemonDetailModalOpen);
     }
-    weight: number;
-}
+    const handleSelectPokemon = async (pokemonName: string) => {
+        setIsPokemonDetailsLoading(true)
+        setIsPokemonDetailModalOpen(!isPokemonDetailModalOpen); // Para abrir a modal.
+        try {
+            const { data } = await getPokemonDetails({ pokemonName })
+            setPokemonDetails(data)
+        } catch (err) {
+            // TODO: Tratar erro da api
+            console.error(err)
+        } finally {
+            setIsPokemonDetailsLoading(false);
+        }
+    };
 
-type UseFetchPokemonDetailsTypes = [
-    PokemonDetailed
-];
-
-const useFetchPokemonDetails = (pokemonName: string): UseFetchPokemonDetailsTypes => {
-    const [pokemonDetails, setPokemonDetails] = useState<PokemonDetailed>({} as PokemonDetailed);
-
-    const fetchPokemons = useCallback(async (pokemonName: string) => {
-        const { data } = await axios.get<PokemonDetailed>(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`);
-        setPokemonDetails(data);
-    }, [pokemonName])
-
-    useEffect(() => {
-        fetchPokemons(pokemonName);
-    }, []);
-
-    return [pokemonDetails];
+    return { pokemonDetails, handleSelectPokemon, isPokemonDetailsLoading, handleShowModal };
 };
 
 export default useFetchPokemonDetails;
