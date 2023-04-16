@@ -1,21 +1,37 @@
 import axios from "axios";
-import { useCallback, useState } from "react";
-import { PokemonDetails } from "../@types/types";
+import { useCallback, useEffect, useState } from "react";
 
-
-const UseFetchPokemonDetails = () => {
-    const [pokemonDetails, setPokemonDetails] = useState<PokemonDetails>();
-
-    const handlePokemonDetails = (pokemonName: string) => {
-        fetchPokemons(pokemonName);
+type Ability = {
+    ability: {
+        name: string;
     };
+}
+
+type PokemonDetailed = {
+    abilities: Ability[];
+    sptrites: {
+        front_default: string;
+    }
+    weight: number;
+}
+
+type UseFetchPokemonDetailsTypes = [
+    PokemonDetailed
+];
+
+const useFetchPokemonDetails = (pokemonName: string): UseFetchPokemonDetailsTypes => {
+    const [pokemonDetails, setPokemonDetails] = useState<PokemonDetailed>({} as PokemonDetailed);
 
     const fetchPokemons = useCallback(async (pokemonName: string) => {
-        const { data } = await axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemonName}}`);
+        const { data } = await axios.get<PokemonDetailed>(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`);
         setPokemonDetails(data);
-    }, [])
+    }, [pokemonName])
 
-    return [pokemonDetails, handlePokemonDetails];
+    useEffect(() => {
+        fetchPokemons(pokemonName);
+    }, []);
+
+    return [pokemonDetails];
 };
 
-export default UseFetchPokemonDetails;
+export default useFetchPokemonDetails;

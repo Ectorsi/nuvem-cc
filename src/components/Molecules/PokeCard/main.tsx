@@ -1,28 +1,27 @@
-import React, { useState } from "react";
+import React, { useState, MouseEvent } from "react";
 import * as S from "./styles";
 import { createPortal } from 'react-dom';
 import PokeDetails from "../Pokedetails/main";
-import { PokemonDetails } from "../../../@types/types";
 
-
-export type PokeCardProps = {
-    pokeName: string;
-    pokemonDetailsType: PokemonDetails,
-    handlePokemonDetailsProp: (pokeName: string) => void,
+type PokeCardProps = {
+    name: string;
     rest?: any;
 };
 
-const PokeCard = ({ pokeName, handlePokemonDetailsProp, pokemonDetailsType, ...rest }: PokeCardProps) => {
+const PokeCard = ({ name, ...rest }: PokeCardProps) => {
     const [isOpen, setIsOpen] = useState(false);
-    const handleClick = () => {
-        handlePokemonDetailsProp(pokeName);
-        setIsOpen(!isOpen);
+
+    const handleClick = (e: MouseEvent<HTMLButtonElement>) => {
+        if (e) {
+            setIsOpen(!isOpen);
+        }
     };
+
     return (
-        <S.Container type="button" onClick={handleClick} {...rest}>
-            <h1>{pokeName}</h1>
+        <S.Container type="button" onClick={e => handleClick(e)} {...rest}>
+            <h1>{name}</h1>
             {isOpen && createPortal(
-                <PokeDetails pokemonDetailsType={pokemonDetailsType} isOpen={isOpen} />,
+                <PokeDetails name={name} isOpen={isOpen} />,
                 document.body
             )}
         </S.Container>
