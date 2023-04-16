@@ -9,7 +9,7 @@ type Ability = {
 
 type PokemonDetailed = {
     abilities: Ability[];
-    sptrites: {
+    sprites: {
         front_default: string;
     }
     weight: number;

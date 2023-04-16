@@ -1,6 +1,6 @@
 import React, { useMemo } from "react";
 import * as S from "./styles";
-import PokeCard from "../../Molecules/PokeCard/main";
+import PokeCard from "../PokeCard/main";
 import useFetchPokemons from "../../../hooks/UseFetchPokemons";
 
 type PokemonItem = {
