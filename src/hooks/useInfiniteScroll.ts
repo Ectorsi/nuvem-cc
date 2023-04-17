@@ -26,7 +26,6 @@ export function useInfiniteScroll({ fetchPokemons }: UseInfiniteScroll) {
     const [isFetching, setIsFetching] = useState(false);
     const [currentPage, setCurrentPage] = useState(0);
 
-
     const resetCurrentPage = () => {
         setCurrentPage(0);
     };
