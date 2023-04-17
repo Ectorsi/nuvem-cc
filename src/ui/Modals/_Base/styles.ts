@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import Theme from "../../../styles/theme";
 
 export const Overlay = styled.div<{
     hidden?: boolean
@@ -16,26 +15,39 @@ export const Overlay = styled.div<{
 `
 
 export const Container = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-start;
-    box-shadow: rgba(100, 100, 111, 0.3) 0px 7px 29px 0px;
-    background-color: white;
-    border: 2px solid ${Theme.colors.grayScale.bgCardBorder};
-    border-radius: 12px;
-    position:  absolute;
-    width: 60%;
+    /* background: #fff; */
+    max-height: 95%;
+    height: fit-content;
+    border-radius: 10px;
+    position: fixed;
+    overflow: hidden;
+    overflow-y: auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    margin: auto;
     z-index: 2;
-    top: 70px;
-    left: calc(50% - 30%);
-    bottom: 70px;
+    min-width: 10%;
+    max-width: 80%;
+`;
+
+export const Content = styled.div`
+    width: 100%;
+    height: 520px;
+    position: relative;
+    overflow: auto;
+    padding: 10px;
 `;
 
 export const CloseButton = styled.button`
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 40px;
+    right: 100px;
     border: none;
     background: none;
+    cursor: pointer;
+    z-index: 9;
+    color: white;
+    font-size: 20px;
 `;

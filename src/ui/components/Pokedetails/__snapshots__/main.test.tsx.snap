@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PokeDetails unit test should be able to show the pokemon details 1`] = `
+<main
+  class="sc-beqWaB govhUy"
+>
+  <h1
+    class="sc-gueYoa bHtBpd"
+  >
+    pikachu
+  </h1>
+  <img
+    alt="Pokemon pikachu"
+    class="sc-dmqHEX gLpXyp"
+    src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png"
+  />
+  <div
+    class="sc-eDDNvR eKSmPI"
+  >
+    <div
+      class="sc-gLDzan cmbECg"
+    >
+      <label
+        class="sc-hLseeU gnmaPz"
+      >
+        Habilidades
+      </label>
+      <h2>
+        STATIC
+      </h2>
+      <h2>
+        LIGHTNING-ROD
+      </h2>
+    </div>
+    <div
+      class="sc-iAEyYk kPInMi"
+    >
+      <label
+        class="sc-jTrPJq eyyiGi"
+      >
+        Peso
+      </label>
+      <h2>
+        60
+      </h2>
+    </div>
+  </div>
+</main>
+`;

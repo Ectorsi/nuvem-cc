@@ -1,13 +1,30 @@
 import React from 'react';
-import HomeTemplate from "../../Templates/Home/main";
+import HomeTemplate from "../../Templates/Home/HomeTemplate";
 import * as S from "./styles";
-import useFetchPokemons from '../../../hooks/UseFetchPokemons';
-import useFetchPokemonDetails from '../../../hooks/UseFectchPokemonDetails';
+import { useSearch } from '../../../hooks/useSearch';
+import { useRegion } from '../../../hooks/useGetPokemonByRegion';
+import { useInfiniteScroll } from '../../../hooks/useInfiniteScroll';
+import useFetchPokemons from '../../../hooks/useFetchPokemons';
+import useFetchPokemonDetails from '../../../hooks/useFectchPokemonDetails';
 
 const HomePage = () => {
-    const { pokemonList } = useFetchPokemons();
-    const { handleSelectPokemon, isPokemonDetailsLoading, pokemonDetails, handleShowModal } = useFetchPokemonDetails();
+    const { pokemonList, fetchPokemons, setPokemonList, pokemonListInitalState, loadingPokemonsList, errorFetchPokemons } = useFetchPokemons();
+    const { handleSelectPokemon, isPokemonDetailsLoading, errorFetchPokemonDetails, pokemonDetails, handleShowModal, isPokemonDetailModalOpen } = useFetchPokemonDetails();
+    const { handleSearch, search, error } = useSearch({
+        pokemonListInitalState,
+        setPokemonList
+    });
 
+    const { region, handleChangeRegion, selectedRegion, filterError } = useRegion({
+        setPokemonList,
+        pokemonListInitalState,
+    });
+
+    const {
+        currentPage,
+    } = useInfiniteScroll({
+        fetchPokemons
+    })
     return (
         <S.Container>
             <HomeTemplate
@@ -16,15 +33,32 @@ const HomePage = () => {
                     pokemonList: pokemonList ?? [],
                     pokeCard: {
                         handleSelectPokemon: handleSelectPokemon,
-                        handleShowModal: handleShowModal
-                    }
+
+                    },
+                    loadingPokemonsList,
+                    errorFetchPokemons
                 }}
                 pokemonDetails={pokemonDetails}
-                showModal={isPokemonDetailsLoading}
-                handleShowModal={() => { }}
-                pokeCard={{
-                    handleSelectPokemon: handleSelectPokemon,
-                    handleShowModal: handleShowModal
+                showModal={isPokemonDetailModalOpen}
+                handleShowModal={handleShowModal}
+                pokeFilter={{
+                    inputTextProps: {
+                        label: 'Pesquisar',
+                        placeholder: 'Pesquisar',
+                        onChange: handleSearch,
+                        value: search,
+                        error: error ?? undefined,
+                    },
+                    selectBoxProps: {
+                        label: 'Tipo',
+                        placeholder: 'Selecione um tipo',
+                        value: selectedRegion,
+                        onChange: (e) => {
+                            handleChangeRegion(e.target.value);
+                        },
+                        options: region,
+                        error: filterError ?? undefined,
+                    },
                 }}
             />
         </S.Container>

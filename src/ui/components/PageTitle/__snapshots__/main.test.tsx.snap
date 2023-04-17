@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PageTitle unit test should be able to show the page title 1`] = `
+<h1
+  class="sc-beqWaB ekCqDZ"
+>
+  Test
+</h1>
+`;

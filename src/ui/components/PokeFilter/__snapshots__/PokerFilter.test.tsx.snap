@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PokeFilter unit test should be able to match snapshot 1`] = `
+<div
+  class="sc-beqWaB hJLspP"
+>
+  <label
+    class="sc-dmqHEX"
+  >
+    Test
+  </label>
+  <input
+    class="sc-gueYoa"
+    placeholder="Test"
+    type="text"
+    value="Test"
+  />
+  <label
+    class="sc-eDDNvR"
+  >
+    LabelTest
+  </label>
+  <select
+    class="sc-hLseeU ijGzb"
+  >
+    <option
+      value=""
+    >
+      PlaceholderTest
+    </option>
+    <option
+      value="Option1"
+    >
+      Option1
+    </option>
+    <option
+      value="Option2"
+    >
+      Option2
+    </option>
+  </select>
+</div>
+`;

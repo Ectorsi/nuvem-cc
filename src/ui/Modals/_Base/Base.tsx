@@ -26,7 +26,10 @@ export const Modal = ({
             />
             <S.Container>
                 <S.CloseButton onClick={handleShowModal}>x</S.CloseButton>
+                <S.Content>
+                    {children}
+                </S.Content>
             </S.Container>
-        </ReactPortal>
+        </ReactPortal >
     )
 }

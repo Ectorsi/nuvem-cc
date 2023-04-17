@@ -1,7 +1,7 @@
 import React, { CSSProperties } from 'react';
 import { Modal } from '../_Base/Base';
-import PokeDetails from '../../components/Pokedetails/main';
-import { GetPokemonDetailReturn } from '../../../domains/pokemon/pokemonDomain';
+import { PokeDetails } from '../../components/PokeDetails/PokeDetails';
+import { GetPokemonDetailReturn } from '../../../domains/pokemon/types';
 
 export type PokemonDetailModalProp = {
     handleShowModal: () => void;
@@ -16,7 +16,7 @@ const PokemonDetailModal = ({
 }: PokemonDetailModalProp) => (
     <Modal {...rest}>
         <PokeDetails pokemonDetails={pokemonDetails} />
-    </Modal>
+    </Modal >
 );
 
 export default PokemonDetailModal;

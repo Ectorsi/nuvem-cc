@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PokeCard unit test should be able to show the pokemon name 1`] = `
+<button
+  class="sc-beqWaB dgRjyp"
+  type="button"
+>
+  <h1>
+    pikachu
+  </h1>
+</button>
+`;

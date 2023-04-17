@@ -1,7 +1,7 @@
 import React from "react";
-import { fireEvent, render, screen } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 
-import Pokedetails from './main';
+import { PokeDetails } from './PokeDetails';
 
 const mockpokemonDetails = {
     pokemonDetails: {
@@ -32,12 +32,11 @@ const mockpokemonDetails = {
     }
 };
 
-describe('PokeCard unit test', () => {
-    it('should be able opem modal and to show the pokemon name', () => {
-        render(<Pokedetails {...mockpokemonDetails} />);
+describe('PokeDetails unit test', () => {
+    it('should be able to show the pokemon details', () => {
+        const { container } = render(<PokeDetails {...mockpokemonDetails} />);
         const name = screen.getByText(/pikachu/i);
-        const buttonClose = screen.getByText(/X/i);
-        fireEvent.click(buttonClose);
         expect(name).toBeInTheDocument();
+        expect(container.firstChild).toMatchSnapshot();
     });
 });

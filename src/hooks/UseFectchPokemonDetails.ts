@@ -1,36 +1,35 @@
-import { useState } from "react";
-import { GetPokemonDetailReturn, getPokemonDetails } from "../domains/pokemon/pokemonDomain";
-
-type UseFetchPokemonDetailsReturn = {
-    pokemonDetails: GetPokemonDetailReturn | null;
-    handleSelectPokemon: (pokemonName: string) => Promise<void>;
-    isPokemonDetailsLoading: boolean;
-    handleShowModal: () => void;
-};
+import { useCallback, useState } from "react";
+import { getPokemonDetails } from "../domains/pokemon/pokemonDomain";
+import { GetPokemonDetailReturn } from "../domains/pokemon/types";
+import { UseFetchPokemonDetailsReturn } from "./types";
 
 const useFetchPokemonDetails = (): UseFetchPokemonDetailsReturn => {
     const [pokemonDetails, setPokemonDetails] = useState<GetPokemonDetailReturn | null>(null);
     const [isPokemonDetailsLoading, setIsPokemonDetailsLoading] = useState(false);
     const [isPokemonDetailModalOpen, setIsPokemonDetailModalOpen] = useState(false);
+    const [errorFetchPokemonDetails, setErrorFetchPokemonDetails] = useState<string | null>(null);
 
-    const handleShowModal = () => {
-        setIsPokemonDetailModalOpen(!isPokemonDetailModalOpen);
-    }
-    const handleSelectPokemon = async (pokemonName: string) => {
+    const handleShowModal = useCallback(() => {
+        setIsPokemonDetailModalOpen((oldState) => {
+            return !oldState;
+        });
+    }, [setIsPokemonDetailModalOpen, setIsPokemonDetailModalOpen])
+
+    const handleSelectPokemon = useCallback(async (pokemonName: string) => {
+        handleShowModal();
         setIsPokemonDetailsLoading(true)
-        setIsPokemonDetailModalOpen(!isPokemonDetailModalOpen); // Para abrir a modal.
         try {
             const { data } = await getPokemonDetails({ pokemonName })
             setPokemonDetails(data)
-        } catch (err) {
-            // TODO: Tratar erro da api
-            console.error(err)
+        } catch (errorFetchPokemonDetails) {
+            console.error(errorFetchPokemonDetails)
+            setErrorFetchPokemonDetails('Error ao carregar os detalhes do pokemon')
         } finally {
             setIsPokemonDetailsLoading(false);
         }
-    };
+    }, [handleShowModal, setIsPokemonDetailsLoading, getPokemonDetails]);
 
-    return { pokemonDetails, handleSelectPokemon, isPokemonDetailsLoading, handleShowModal };
+    return { pokemonDetails, handleSelectPokemon, isPokemonDetailsLoading, handleShowModal, isPokemonDetailModalOpen, errorFetchPokemonDetails };
 };
 
 export default useFetchPokemonDetails;

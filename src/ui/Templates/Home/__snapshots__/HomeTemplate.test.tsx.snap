@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HomeTemplate integration test should be able to show all components 1`] = `
+<div
+  class="sc-gueYoa dFySFy"
+>
+  <h1
+    class="sc-beqWaB ekCqDZ"
+  >
+    Pokedex
+  </h1>
+  <div
+    class="sc-gLDzan cwOWvj"
+  >
+    <label
+      class="sc-fsQiph"
+    >
+      Pesquisar
+    </label>
+    <input
+      class="sc-iAEyYk"
+      placeholder="Pesquisar"
+      type="text"
+      value="Pikachu"
+    />
+    <label
+      class="sc-jsMahE"
+    >
+      Tipo
+    </label>
+    <select
+      class="sc-qRumB fGuUhc"
+    >
+      <option
+        value=""
+      >
+        Selecione um tipo
+      </option>
+      <option
+        value="Value Test"
+      >
+        Label test
+      </option>
+      <option
+        value="Value Test2"
+      >
+        Label test2
+      </option>
+    </select>
+  </div>
+  <div
+    class="sc-dmqHEX kTQUro"
+    id="list-items"
+  >
+    <button
+      class="sc-jTrPJq ggUHYc"
+      type="button"
+    >
+      <h1>
+        Pikachu
+      </h1>
+    </button>
+    <button
+      class="sc-jTrPJq ggUHYc"
+      type="button"
+    >
+      <h1>
+        Pikachu2
+      </h1>
+    </button>
+  </div>
+</div>
+`;

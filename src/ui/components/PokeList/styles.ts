@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Container = styled.div`
     background-color: white;
 
-    height: 430px;
+    height: 600px;
     border-radius: 8px;
     padding: 10px;
 
@@ -13,3 +13,7 @@ export const Container = styled.div`
 
     overflow-y: scroll;
 `;
+
+export const Error = styled.h3``;
+
+export const Loading = styled.h3``;
