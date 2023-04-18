@@ -5,23 +5,23 @@ exports[`PokeFilter unit test should be able to match snapshot 1`] = `
   class="sc-beqWaB hJLspP"
 >
   <label
-    class="sc-dmqHEX"
+    class="sc-dmqHEX eRUUrI"
   >
     Test
   </label>
   <input
-    class="sc-gueYoa"
+    class="sc-gueYoa lcbmne"
     placeholder="Test"
     type="text"
     value="Test"
   />
   <label
-    class="sc-eDDNvR"
+    class="sc-jTrPJq bUrBxG"
   >
     LabelTest
   </label>
   <select
-    class="sc-hLseeU ijGzb"
+    class="sc-eDDNvR hIqGFP"
   >
     <option
       value=""

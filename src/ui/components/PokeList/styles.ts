@@ -12,8 +12,10 @@ export const Container = styled.div`
     justify-content: flex-start;
 
     overflow-y: scroll;
+
+    position: relative;
 `;
 
 export const Error = styled.h3``;
 
-export const Loading = styled.h3``;
+export const LastItem = styled.div``;

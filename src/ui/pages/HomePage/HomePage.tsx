@@ -4,8 +4,8 @@ import * as S from "./styles";
 import { useSearch } from '../../../hooks/useSearch';
 import { useRegion } from '../../../hooks/useGetPokemonByRegion';
 import { useInfiniteScroll } from '../../../hooks/useInfiniteScroll';
-import useFetchPokemons from '../../../hooks/useFetchPokemons';
-import useFetchPokemonDetails from '../../../hooks/useFectchPokemonDetails';
+import useFetchPokemons from '../../../hooks/UseFetchPokemons';
+import useFetchPokemonDetails from '../../../hooks/UseFectchPokemonDetails';
 
 const HomePage = () => {
     const { pokemonList, fetchPokemons, setPokemonList, pokemonListInitalState, loadingPokemonsList, errorFetchPokemons } = useFetchPokemons();
@@ -20,11 +20,8 @@ const HomePage = () => {
         pokemonListInitalState,
     });
 
-    const {
-        currentPage,
-    } = useInfiniteScroll({
-        fetchPokemons
-    })
+    const { currentPage } = useInfiniteScroll({ fetchPokemons });
+
     return (
         <S.Container>
             <HomeTemplate

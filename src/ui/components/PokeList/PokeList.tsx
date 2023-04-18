@@ -2,6 +2,7 @@ import React from "react";
 import * as S from "./styles";
 import PokeCard, { PokeCardProps } from "../PokeCard/PokeCard";
 import { Pokemon } from "../../../domains/pokemon/types";
+import { Spinner } from "../Loader/styles";
 
 export type PokeListProps = {
     pokemonList: Pokemon[] | []
@@ -11,19 +12,19 @@ export type PokeListProps = {
 }
 
 const PokeList = ({ pokemonList, pokeCard, loadingPokemonsList, errorFetchPokemons }: PokeListProps) => {
-    const showResults = pokemonList.length > 0 && (
-        pokemonList.map((pokemon) => (
-            <PokeCard
-                name={pokemon.name}
-                key={pokemon.name}
-                {...pokeCard}
-            />
-        ))
-    )
-    const isLoading = !loadingPokemonsList ? showResults : <S.Loading>Carregando...</S.Loading>;
     return (
         <S.Container id="list-items">
-            {!errorFetchPokemons ? isLoading : <S.Error>{errorFetchPokemons}</S.Error>}
+            {errorFetchPokemons && <S.Error>{errorFetchPokemons}</S.Error>}
+            {loadingPokemonsList && <Spinner />}
+            {pokemonList.length > 0 && (
+                pokemonList.map((pokemon) => (
+                    <PokeCard
+                        name={pokemon.name}
+                        key={pokemon.name}
+                        {...pokeCard}
+                    />
+                ))
+            )}
         </S.Container>
     );
 }

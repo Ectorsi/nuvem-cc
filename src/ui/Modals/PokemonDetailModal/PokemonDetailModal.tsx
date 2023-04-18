@@ -1,7 +1,7 @@
 import React, { CSSProperties } from 'react';
 import { Modal } from '../_Base/Base';
-import { PokeDetails } from '../../components/PokeDetails/PokeDetails';
 import { GetPokemonDetailReturn } from '../../../domains/pokemon/types';
+import { PokeDetails } from '../../components/Pokedetails/PokeDetails';
 
 export type PokemonDetailModalProp = {
     handleShowModal: () => void;

@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`PokeDetails unit test should be able to show the pokemon details 1`] = `
-<main
+<div
   class="sc-beqWaB govhUy"
 >
   <h1
@@ -45,5 +45,5 @@ exports[`PokeDetails unit test should be able to show the pokemon details 1`] = 
       </h2>
     </div>
   </div>
-</main>
+</div>
 `;

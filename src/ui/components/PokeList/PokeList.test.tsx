@@ -35,10 +35,4 @@ describe('PokeList unit test', () => {
         const error = screen.getByText('error');
         expect(error).toBeInTheDocument();
     });
-
-    it('should be able to show PokeList with loading content', () => {
-        render(<PokeList {...MockPokeListProps} loadingPokemonsList />);
-        const loading = screen.getByText('Carregando...');
-        expect(loading).toBeInTheDocument();
-    });
 });

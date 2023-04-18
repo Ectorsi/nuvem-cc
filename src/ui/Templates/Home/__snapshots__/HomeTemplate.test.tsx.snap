@@ -2,7 +2,7 @@
 
 exports[`HomeTemplate integration test should be able to show all components 1`] = `
 <div
-  class="sc-gueYoa dFySFy"
+  class="sc-gueYoa eTPenr"
 >
   <h1
     class="sc-beqWaB ekCqDZ"
@@ -10,26 +10,26 @@ exports[`HomeTemplate integration test should be able to show all components 1`]
     Pokedex
   </h1>
   <div
-    class="sc-gLDzan cwOWvj"
+    class="sc-fsQiph jIXeSY"
   >
     <label
-      class="sc-fsQiph"
+      class="sc-jsMahE lobKmZ"
     >
       Pesquisar
     </label>
     <input
-      class="sc-iAEyYk"
+      class="sc-qRumB uFHUP"
       placeholder="Pesquisar"
       type="text"
       value="Pikachu"
     />
     <label
-      class="sc-jsMahE"
+      class="sc-csCMJt cCDbZp"
     >
       Tipo
     </label>
     <select
-      class="sc-qRumB fGuUhc"
+      class="sc-irTswW eRQjeg"
     >
       <option
         value=""
@@ -49,7 +49,7 @@ exports[`HomeTemplate integration test should be able to show all components 1`]
     </select>
   </div>
   <div
-    class="sc-dmqHEX kTQUro"
+    class="sc-dmqHEX hDPReU"
     id="list-items"
   >
     <button
