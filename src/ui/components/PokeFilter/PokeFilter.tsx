@@ -9,6 +9,7 @@ export type PokeFilterProps = {
     selectBoxLocation: SelectProps;
     selectBoxAreas: SelectProps;
     cleanFilters: () => void;
+    clearSearch: () => void;
 };
 
 const PokeFilter = ({
@@ -17,7 +18,14 @@ const PokeFilter = ({
     selectBoxLocation,
     selectBoxAreas,
     cleanFilters,
+    clearSearch,
 }: PokeFilterProps) => {
+
+    const handleClearFields = () => {
+        clearSearch();
+        cleanFilters();
+    };
+
     return (
         <S.Container>
             <h2>Pesquise o Pokemon pelo nome</h2>
@@ -31,7 +39,7 @@ const PokeFilter = ({
                 <SelectBox {...selectBoxRegion} />
                 <SelectBox {...selectBoxLocation} />
                 <SelectBox {...selectBoxAreas} />
-                <Button onClick={cleanFilters}>Limpar filtros</Button>
+                <Button onClick={handleClearFields}>Limpar filtros</Button>
             </S.SelectContainer>
         </S.Container>
     );

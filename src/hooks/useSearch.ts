@@ -10,6 +10,7 @@ export const useSearch = ({
 }: UseSearchProps) => {
     const [search, setSearch] = useState('');
     const [error, setError] = useState<string | null>(null);
+    const [isSearchLoading, setIsSearchLoading] = useState(false);
 
     const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
         setSearch(event.target.value);
@@ -30,6 +31,7 @@ export const useSearch = ({
         if (debouncedSearch) {
             const getPokemon = async () => {
                 try {
+                    setIsSearchLoading(true);
                     const filteredPokemon = await getPokemonDetails({
                         pokemonName: debouncedSearch,
                     });
@@ -49,11 +51,13 @@ export const useSearch = ({
                         );
                         return;
                     }
+                } finally {
+                    setIsSearchLoading(false);
                 }
             };
             getPokemon();
         }
     }, [debouncedSearch]);
 
-    return { search, error, handleSearch, clearSearch };
+    return { search, error, handleSearch, clearSearch, isSearchLoading };
 };

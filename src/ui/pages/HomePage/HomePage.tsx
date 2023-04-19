@@ -21,7 +21,7 @@ const HomePage = () => {
         handleShowModal,
         isPokemonDetailModalOpen,
     } = useFetchPokemonDetails();
-    const { handleSearch, search, error } = useSearch({
+    const { handleSearch, search, error, clearSearch, isSearchLoading } = useSearch({
         pokemonListInitalState,
         setPokemonList,
     });
@@ -56,6 +56,7 @@ const HomePage = () => {
                     },
                     loadingPokemonsList,
                     errorFetchPokemons,
+                    errorSearchPokemons: !!error ?? false,
                 }}
                 pokemonDetails={pokemonDetails}
                 showModal={isPokemonDetailModalOpen}
@@ -66,6 +67,7 @@ const HomePage = () => {
                         onChange: handleSearch,
                         value: search,
                         error: error ?? undefined,
+                        loading: isSearchLoading,
                     },
                     selectBoxRegion: {
                         label: 'Região',
@@ -100,6 +102,7 @@ const HomePage = () => {
                         disabled: !selectedLocation,
                     },
                     cleanFilters,
+                    clearSearch,
                 }}
             />
         </S.Container>

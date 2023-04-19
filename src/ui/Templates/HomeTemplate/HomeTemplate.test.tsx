@@ -20,8 +20,10 @@ const MockHomeTemplate: HomeTemplateProps = {
         },
         errorFetchPokemons: '',
         loadingPokemonsList: false,
+        errorSearchPokemons: false,
     },
     pokeFilter: {
+        clearSearch: jest.fn(),
         cleanFilters: jest.fn(),
         inputTextProps: {
             placeholder: 'Pesquisar',

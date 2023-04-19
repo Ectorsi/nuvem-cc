@@ -2,7 +2,7 @@ const Theme = {
     colors: {
         main: {
             primary: '#DC0A2D',
-            error: '#8620c2',
+            colorError: '#8620c2',
         },
         grayScale: {
             bgCard: '#EFEFEF',

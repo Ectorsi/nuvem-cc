@@ -1,8 +1,12 @@
 import * as S from './styles';
 
-export const Loader = () => {
+export type LoaderProps = {
+    small?: boolean;
+};
+
+export const Loader = ({ small }: LoaderProps) => {
     return (
-        <S.LoaderWrapper data-testid="loader">
+        <S.LoaderWrapper data-testid="loader" small={small}>
             <S.Spinner />
         </S.LoaderWrapper>
     );

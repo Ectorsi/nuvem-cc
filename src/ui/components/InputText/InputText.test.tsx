@@ -7,6 +7,7 @@ const mockInputText: InputTextProps = {
     value: 'Test',
     onChange: jest.fn(),
     error: '',
+    loading: false,
 };
 
 describe('InputText unit test', () => {
@@ -21,5 +22,11 @@ describe('InputText unit test', () => {
         render(<InputText {...mockInputText} error="error test" />);
         const errorMessage = screen.getAllByText(/error test/i)[0];
         expect(errorMessage).toBeInTheDocument();
+    });
+
+    it("should be able to show the InputText's loader", () => {
+        render(<InputText {...mockInputText} loading />);
+        const loader = screen.getByTestId('loader');
+        expect(loader).toBeInTheDocument();
     });
 });

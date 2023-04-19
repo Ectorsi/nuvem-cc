@@ -18,6 +18,7 @@ const MockPokeListProps: PokeListProps = {
     },
     loadingPokemonsList: false,
     errorFetchPokemons: null,
+    errorSearchPokemons: false,
 };
 
 describe('PokeList unit test', () => {

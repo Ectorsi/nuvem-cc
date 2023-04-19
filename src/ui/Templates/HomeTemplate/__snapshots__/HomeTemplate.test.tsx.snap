@@ -16,7 +16,7 @@ exports[`HomeTemplate integration test should be able to show all components 1`]
       Pesquise o Pokemon pelo nome
     </h2>
     <input
-      class="sc-jsMahE dPXcAO"
+      class="sc-jsMahE jSqZMn"
       placeholder="Pesquisar"
       type="text"
       value="Pikachu"
@@ -95,7 +95,7 @@ exports[`HomeTemplate integration test should be able to show all components 1`]
         </select>
       </div>
       <button
-        class="sc-hAtEyd bfJMZR"
+        class="sc-hAtEyd hsHcnd"
       >
         Limpar filtros
       </button>

@@ -8,7 +8,7 @@ exports[`PokeFilter unit test should be able to match snapshot 1`] = `
     Pesquise o Pokemon pelo nome
   </h2>
   <input
-    class="sc-dmqHEX jGUQHX"
+    class="sc-dmqHEX hlUAwi"
     placeholder="Test"
     type="text"
     value="Test"
@@ -23,15 +23,15 @@ exports[`PokeFilter unit test should be able to match snapshot 1`] = `
     class="sc-gueYoa ienTpA"
   >
     <div
-      class="sc-jTrPJq kpTOXV"
+      class="sc-iAEyYk jEYiaI"
     >
       <label
-        class="sc-iAEyYk kSEbZN"
+        class="sc-qRumB RfdGC"
       >
         LabelTest
       </label>
       <select
-        class="sc-gLDzan fjWcfF"
+        class="sc-fsQiph NiIQK"
       >
         <option
           value=""
@@ -51,15 +51,15 @@ exports[`PokeFilter unit test should be able to match snapshot 1`] = `
       </select>
     </div>
     <div
-      class="sc-jTrPJq kpTOXV"
+      class="sc-iAEyYk jEYiaI"
     >
       <label
-        class="sc-iAEyYk kSEbZN"
+        class="sc-qRumB RfdGC"
       >
         LabelTest
       </label>
       <select
-        class="sc-gLDzan fjWcfF"
+        class="sc-fsQiph NiIQK"
       >
         <option
           value=""
@@ -79,15 +79,15 @@ exports[`PokeFilter unit test should be able to match snapshot 1`] = `
       </select>
     </div>
     <div
-      class="sc-jTrPJq kpTOXV"
+      class="sc-iAEyYk jEYiaI"
     >
       <label
-        class="sc-iAEyYk kSEbZN"
+        class="sc-qRumB RfdGC"
       >
         LabelTest
       </label>
       <select
-        class="sc-gLDzan fjWcfF"
+        class="sc-fsQiph NiIQK"
       >
         <option
           value=""
@@ -107,7 +107,7 @@ exports[`PokeFilter unit test should be able to match snapshot 1`] = `
       </select>
     </div>
     <button
-      class="sc-qRumB ekebwZ"
+      class="sc-kFuwaP hSKZFG"
     >
       Limpar filtros
     </button>

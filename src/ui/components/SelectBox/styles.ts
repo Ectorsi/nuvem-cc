@@ -2,6 +2,8 @@ import styled from 'styled-components';
 import { SelectProps } from './SelectBox';
 import Theme from '../../../styles/theme';
 
+const { colorError } = Theme.colors.main;
+
 type SelectBoxStyledProps = Pick<SelectProps, 'error'>;
 
 export const Wrapper = styled.div`
@@ -12,7 +14,7 @@ export const Wrapper = styled.div`
 `;
 
 export const SelectContainer = styled.select<SelectBoxStyledProps>`
-    border: ${({ error }) => (error ? '1px solid red' : '1px solid #000')};
+    border: ${({ error }) => (!!error ? `2px solid ${colorError}` : '1px solid #000')};
     border-radius: 4px;
     padding: 8px;
     width: 240px;
@@ -29,5 +31,5 @@ export const Label = styled.label`
 `;
 
 export const Error = styled.span`
-    color: ${Theme.colors.main.error};
+    color: ${Theme.colors.main.colorError};
 `;

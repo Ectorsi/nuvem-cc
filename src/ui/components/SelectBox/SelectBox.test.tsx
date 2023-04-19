@@ -26,7 +26,7 @@ describe('SelectBox unit test', () => {
 
     it("should be able to show the SelectBox's error message", () => {
         render(<SelectBox {...mockSelectBox} error="error test" />);
-        const errorMessage = screen.getAllByText(/error test/i)[0];
+        const errorMessage = screen.getByText(/error test/i);
         expect(errorMessage).toBeInTheDocument();
     });
 });

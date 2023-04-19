@@ -33,6 +33,7 @@ export const useRegion = ({
         setAreas(null);
         setSelectedArea(undefined);
         setPokemonList(pokemonListInitalState);
+        getRegionList();
     };
 
     const getRegionList = async () => {
@@ -44,6 +45,9 @@ export const useRegion = ({
             );
             setRegions(regionListApiReturn);
         } catch (err) {
+            if (axios.isAxiosError(err) && (err.response?.status === 500 || err.response?.status === 404)) {
+                setFilterError('Error ao carregar o filtro de Regiões de pokemons');
+            }
         } finally {
             setLoading(false);
         }
@@ -58,8 +62,8 @@ export const useRegion = ({
             );
             setLocations(locationListApiReturn);
         } catch (err) {
-            if (axios.isAxiosError(err) && err.response?.status === 500) {
-                setFilterError('Error ao carregar o filtro de pokemons');
+            if (axios.isAxiosError(err) && (err.response?.status === 500 || err.response?.status === 404)) {
+                setFilterError('Error ao carregar o filtro de localizações de pokemons');
             }
         } finally {
             setLoading(false);
@@ -75,8 +79,8 @@ export const useRegion = ({
             );
             setAreas(locationAreaListApiReturn);
         } catch (err) {
-            if (axios.isAxiosError(err) && err.response?.status === 500) {
-                setFilterError('Error ao carregar o filtro de pokemons');
+            if (axios.isAxiosError(err) && (err.response?.status === 500 || err.response?.status === 404)) {
+                setFilterError('Error ao carregar o filtro de Áreas de pokemons');
             }
         } finally {
             setLoading(false);
@@ -95,8 +99,8 @@ export const useRegion = ({
             );
             setPokemonList(pokemonListApiReturn);
         } catch (err) {
-            if (axios.isAxiosError(err) && err.response?.status === 500) {
-                setFilterError('Error ao carregar o filtro de pokemons');
+            if (axios.isAxiosError(err) && (err.response?.status === 500 || err.response?.status === 404)) {
+                setFilterError('Error ao carregar o filtro de  pokemons');
             }
         } finally {
             setLoading(false);

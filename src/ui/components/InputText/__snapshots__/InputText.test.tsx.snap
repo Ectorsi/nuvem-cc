@@ -2,7 +2,7 @@
 
 exports[`InputText unit test should be able to show the InputText's label and input 1`] = `
 <input
-  class="sc-beqWaB nsiWQ"
+  class="sc-beqWaB jaSyYN"
   placeholder="Test"
   type="text"
   value="Test"

@@ -35,6 +35,7 @@ const HomeTemplate = ({
                     pokeCard={pokeList.pokeCard}
                     loadingPokemonsList={pokeList.loadingPokemonsList}
                     errorFetchPokemons={pokeList.errorFetchPokemons}
+                    errorSearchPokemons={pokeList.errorSearchPokemons}
                 />
             </S.Container>
             <PokemonDetailModal

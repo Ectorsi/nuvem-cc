@@ -1,8 +1,9 @@
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 
 import PokeFilter, { PokeFilterProps } from './PokeFilter';
 
 const mockPokeFilter: PokeFilterProps = {
+    clearSearch: jest.fn(),
     cleanFilters: jest.fn(),
     inputTextProps: {
         placeholder: 'Test',
@@ -49,5 +50,12 @@ describe('PokeFilter unit test', () => {
     it('should be able to match snapshot', () => {
         const { container } = render(<PokeFilter {...mockPokeFilter} />);
         expect(container.firstChild).toMatchSnapshot();
+    });
+    it('should be able to clear fields', () => {
+        render(<PokeFilter {...mockPokeFilter} />);
+        const button = screen.getByText('Limpar filtros');
+        button.click();
+        expect(mockPokeFilter.clearSearch).toHaveBeenCalled();
+        expect(mockPokeFilter.cleanFilters).toHaveBeenCalled();
     });
 });

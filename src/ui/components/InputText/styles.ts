@@ -1,11 +1,18 @@
 import styled from 'styled-components';
+import { InputTextProps } from './InputText';
+import Theme from '../../../styles/theme';
 
-export const InputContainer = styled.input`
-    border: 1px solid #000;
+const { colorError } = Theme.colors.main;
+
+type InputStyleProps = Pick<InputTextProps, 'error'>
+
+export const InputContainer = styled.input<InputStyleProps>`
+    border: ${({ error }) => (!!error ? `2px solid ${colorError}` : '1px solid #000')};
     border-radius: 4px;
     padding: 8px;
     width: 100%;
     margin-bottom: 16px;
+    position: relative;
 `;
 
 export const InputLabel = styled.label`
