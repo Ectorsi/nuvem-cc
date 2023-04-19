@@ -14,9 +14,6 @@
 separada em hooks customizados assim como aconselha a documentação do react, para mais organização melhor padrão de desenvolvimento.
 </h3>
 
-## 😀Sobre o que poderia ter sido feito com mais calma
->Criei o filtro por região, porém não funcionou corretamente... com experiência adquirida de anos, para essa situação, o front dá muitas voltas para chegar a um cenário no qual o back chegaria com mais facilidade. Nao temos esse recurso na PokeAPI.
-
 ## 🤩Sobre o que eu poderia ter feito a mais (Se houvesse mais tempo 😎)
 >### Implementação de codeSplitting e LazeLoading
 >### Virtualização da listagem de pokemons para garantir mais performance
