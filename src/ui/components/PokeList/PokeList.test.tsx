@@ -1,5 +1,4 @@
-import React from "react";
-import { render, screen } from "@testing-library/react";
+import { render, screen } from '@testing-library/react';
 
 import PokeList, { PokeListProps } from './PokeList';
 
@@ -12,14 +11,14 @@ const MockPokeListProps: PokeListProps = {
         {
             name: 'Pikachu2',
             url: 'www.test.com.br',
-        }
+        },
     ],
     pokeCard: {
-        handleSelectPokemon: jest.fn()
+        handleSelectPokemon: jest.fn(),
     },
     loadingPokemonsList: false,
-    errorFetchPokemons: null
-}
+    errorFetchPokemons: null,
+};
 
 describe('PokeList unit test', () => {
     it('should be able to show two Pokemons in the list', () => {
@@ -31,7 +30,9 @@ describe('PokeList unit test', () => {
     });
 
     it('should be able to show PokeList with error', () => {
-        render(<PokeList {...MockPokeListProps} errorFetchPokemons={'error'} />);
+        render(
+            <PokeList {...MockPokeListProps} errorFetchPokemons={'error'} />
+        );
         const error = screen.getByText('error');
         expect(error).toBeInTheDocument();
     });

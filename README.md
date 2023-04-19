@@ -3,22 +3,26 @@
     <h1>Nuvem Tecnologia</h1>
 </div>
 
-
 <h3 align="center">
   ReactJS Application for Nuvem Tecnologia project
 </h3>
 
 **<h3 align="center">Considerações</h3>**
+
 <p align="center">
  Caros recrutadores, quero agradecer pelo processo seletivo e gostaria de ressaltar que busquei dar o meu melhor para realização do mesmo. Tentei usar o máximo de conhecimento que tenho com padrões, testes e tratamento de dados. Por causa do curto tempo realizei testes unitários em apenas alguns componentes. Optei por criar toda a regra de negócio
 separada em hooks customizados assim como aconselha a documentação do react, para mais organização melhor padrão de desenvolvimento.
 </h3>
 
 ## 🤩Sobre o que eu poderia ter feito a mais (Se houvesse mais tempo 😎)
->### Implementação de codeSplitting e LazeLoading
->### Virtualização da listagem de pokemons para garantir mais performance
->### Storybook para garantir uma documentação front-end de componentes
->### Testes End-to-end para garantir a integridade a aplicação como um todo
+
+> ### Implementação de codeSplitting e LazeLoading
+>
+> ### Virtualização da listagem de pokemons para garantir mais performance
+>
+> ### Storybook para garantir uma documentação front-end de componentes
+>
+> ### Testes End-to-end para garantir a integridade a aplicação como um todo
 
 </br>
 
@@ -33,8 +37,10 @@ separada em hooks customizados assim como aconselha a documentação do react, p
 </br>
 
 ## Cobertura de código
+
 Pensando em garantir a melhor qualidade dos projetos em que trabalho, busco sempre fazer os testes necessários :)
->### yarn test:coverage
+
+> ### yarn test:coverage
 
 </br>
 
@@ -42,65 +48,67 @@ Pensando em garantir a melhor qualidade dos projetos em que trabalho, busco semp
 
 Technologies that I used to develop this web client
 
-- [ReactJS](https://react.dev/)
-- [TypeScript](https://www.typescriptlang.org/)
-- [Styled Components](https://styled-components.com/)
-- [Eslint](https://eslint.org/)
-- [Prettier](https://prettier.io/)
-- [EditorConfig](https://editorconfig.org/)
-- [React Testing Library](https://testing-library.com/)
-- [Jest](https://jestjs.io/pt-BR/)
-- [Axios](https://axios-http.com/ptbr/)
-- [Webpack](https://webpack.js.org/)
-- [Babel](https://babeljs.io/)
+-   [ReactJS](https://react.dev/)
+-   [TypeScript](https://www.typescriptlang.org/)
+-   [Styled Components](https://styled-components.com/)
+-   [Eslint](https://eslint.org/)
+-   [Prettier](https://prettier.io/)
+-   [EditorConfig](https://editorconfig.org/)
+-   [React Testing Library](https://testing-library.com/)
+-   [Jest](https://jestjs.io/pt-BR/)
+-   [Axios](https://axios-http.com/ptbr/)
+-   [Webpack](https://webpack.js.org/)
+-   [Babel](https://babeljs.io/)
 
 ## 💻 Começando a rodar o projeto
 
 ### Requisitos
 
-*Descompacte a pasta enviada pelo email ou clone o projeto no meu repositório do gitHub*
-
+_Descompacte a pasta enviada pelo email ou clone o projeto no meu repositório do gitHub_
 
 bash
 
 > git clone https://github.com/Ectorsi/nuvem-cc.git && cd nuvem-cc
 
-
-*Siga os passos abaixo:*
+_Siga os passos abaixo:_
 
 bash
 
 # Instale as dependências
+
 > ## yarn
 
 # Execute o projeto
+
 > ## yarn start
 
-
-
-
 bash
+
 # Fork using GitHub official command line
+
 # If you don't have the GitHub CLI, use the web site to do that.
 
 $ gh repo fork /Ectorsi/nuvem-cc
 
-
-*Follow the steps below*
+_Follow the steps below_
 
 bash
+
 # Clone your fork
+
 $ git clone your-fork-url && cd nuvem-cc
 
 # Create a branch with your feature
+
 $ git checkout -b my-feature
 
 # Make the commit with your changes
+
 $ git commit -m 'feat: My new feature'
 
 # Send the code to your remote branch
-$ git push origin my-feature
 
+$ git push origin my-feature
 
 After your pull request is merged, you can delete your branch
 

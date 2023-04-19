@@ -1,4 +1,4 @@
-import React, { ChangeEvent } from 'react';
+import { ChangeEvent } from 'react';
 import * as S from './styles';
 
 export type Option = {
@@ -15,8 +15,15 @@ export type SelectProps = {
     options: Option[];
     disabled?: boolean;
 };
-// TODO Verificar se precisarei desse label
-const SelectBox = ({ label, placeholder, error, value, onChange, options, disabled }: SelectProps) => {
+const SelectBox = ({
+    label,
+    placeholder,
+    error,
+    value,
+    onChange,
+    options,
+    disabled,
+}: SelectProps) => {
     return (
         <S.Wrapper>
             <S.Label>{label}</S.Label>
@@ -27,7 +34,9 @@ const SelectBox = ({ label, placeholder, error, value, onChange, options, disabl
             >
                 <option value="">{placeholder}</option>
                 {options.map((option) => (
-                    <option key={option.value} value={option.value}>{option.label}</option>
+                    <option key={option.value} value={option.value}>
+                        {option.label}
+                    </option>
                 ))}
             </S.SelectContainer>
             {!!error && <S.Error>{error}</S.Error>}

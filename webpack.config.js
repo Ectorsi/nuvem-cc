@@ -6,7 +6,7 @@ module.exports = {
     devtool: 'inline-source-map',
     output: {
         path: path.join(__dirname, '/dist'),
-        filename: 'bundle.js'
+        filename: 'bundle.js',
     },
     devServer: {
         static: './dist',
@@ -18,10 +18,7 @@ module.exports = {
                 exclude: /node_modules/,
                 loader: 'babel-loader',
                 options: {
-                    presets: [
-                        '@babel/preset-env',
-                        '@babel/preset-react',
-                    ],
+                    presets: ['@babel/preset-env', '@babel/preset-react'],
                 },
             },
             {
@@ -29,14 +26,14 @@ module.exports = {
                 use: 'ts-loader',
                 exclude: /node_modules/,
             },
-        ]
+        ],
     },
     resolve: {
         extensions: ['.tsx', '.ts', '.js'],
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: './public/index.html'
-        })
-    ]
-}
+            template: './public/index.html',
+        }),
+    ],
+};

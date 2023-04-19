@@ -1,31 +1,17 @@
-import axios from 'axios'
-import { BaseApi } from '../domains'
-
-type LocationArea = {
-    name: string
-    url: string
-}
-
-type GetLocationsByIdReturn = {
-    locations: LocationArea[]
-}
-
-type GetLocationsByUrl = {
-    url: string;
-}
+import { BaseApi } from '../domains';
 
 export type GetLocationsByNameParams = {
     name: string;
-}
-
+};
 
 type Areas = {
-    name: string,
-    url: string
+    name: string;
+    url: string;
 };
 
 export type GetLocationsByNameReturn = {
-    areas: Areas[],
-}
+    areas: Areas[];
+};
 
-export const getLocationsByName = ({ name }: GetLocationsByNameParams) => BaseApi.get<GetLocationsByNameReturn>(`/location/${name}`);
+export const getLocationsByName = ({ name }: GetLocationsByNameParams) =>
+    BaseApi.get<GetLocationsByNameReturn>(`/location/${name}`);

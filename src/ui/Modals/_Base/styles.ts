@@ -1,18 +1,17 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Overlay = styled.div<{
-    hidden?: boolean
+    hidden?: boolean;
 }>`
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0 ,0.5);
+    background: rgba(0, 0, 0, 0.5);
     position: fixed;
     top: 0;
     left: 0;
-    z-Index: 1;
-    opacity: ${({ hidden }) => !!hidden ? '0' : 'inherit'}
-    
-`
+    z-index: 1;
+    opacity: ${({ hidden }) => (!!hidden ? '0' : 'inherit')};
+`;
 
 export const Container = styled.div`
     /* background: #fff; */

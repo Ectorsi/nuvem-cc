@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import Theme from "../../../styles/theme";
+import styled from 'styled-components';
+import Theme from '../../../styles/theme';
 
 export const Container = styled.div`
     display: flex;
@@ -10,7 +10,7 @@ export const Container = styled.div`
     background-color: white;
     border: 2px solid ${Theme.colors.grayScale.bgCardBorder};
     border-radius: 12px;
-    position:  absolute;
+    position: absolute;
     width: 60%;
     top: 70px;
     left: calc(50% - 30%);
@@ -81,8 +81,6 @@ export const WeightCaracteristics = styled.div`
     padding: 15px;
     font-size: 20px;
 `;
-
-
 
 export const CloseButton = styled.button`
     position: absolute;

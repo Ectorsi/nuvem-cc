@@ -14,8 +14,13 @@ function createWrapperAndAppendToBody(wrapperId: string) {
     return wrapperElement;
 }
 
-function ReactPortal({ children, wrapperId = 'react-portal-wrapper' }: TPortalProps) {
-    const [wrapperElement, setWrapperElement] = useState<HTMLElement | null>(null);
+function ReactPortal({
+    children,
+    wrapperId = 'react-portal-wrapper',
+}: TPortalProps) {
+    const [wrapperElement, setWrapperElement] = useState<HTMLElement | null>(
+        null
+    );
 
     useLayoutEffect(() => {
         let element = document.getElementById(wrapperId);

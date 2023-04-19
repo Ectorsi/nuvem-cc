@@ -1,5 +1,4 @@
-import React from "react";
-import { render } from "@testing-library/react";
+import { render } from '@testing-library/react';
 
 import PokemonDetailModal from './PokemonDetailModal';
 
@@ -12,32 +11,35 @@ const MockPokemonDetailModalProps = {
         abilities: [
             {
                 ability: {
-                    name: "static",
-                    url: "https://pokeapi.co/api/v2/ability/9/"
+                    name: 'static',
+                    url: 'https://pokeapi.co/api/v2/ability/9/',
                 },
                 is_hidden: false,
-                slot: 1
+                slot: 1,
             },
             {
                 ability: {
-                    name: "lightning-rod",
-                    url: "https://pokeapi.co/api/v2/ability/31/"
+                    name: 'lightning-rod',
+                    url: 'https://pokeapi.co/api/v2/ability/31/',
                 },
                 is_hidden: true,
-                slot: 3
+                slot: 3,
             },
         ],
         height: 4,
         sprites: {
-            front_default: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png",
+            front_default:
+                'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png',
         },
-        weight: 60
-    }
-}
+        weight: 60,
+    },
+};
 
 describe('PageTitle unit test', () => {
     it('should be able to show two Pokemons in the list', () => {
-        const { container } = render(<PokemonDetailModal {...MockPokemonDetailModalProps} />);
+        const { container } = render(
+            <PokemonDetailModal {...MockPokemonDetailModalProps} />
+        );
         expect(container.firstChild).toMatchSnapshot();
     });
 });

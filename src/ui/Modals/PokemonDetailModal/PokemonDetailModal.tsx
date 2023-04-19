@@ -1,4 +1,4 @@
-import React, { CSSProperties } from 'react';
+import { CSSProperties } from 'react';
 import { Modal } from '../_Base/Base';
 import { GetPokemonDetailReturn } from '../../../domains/pokemon/types';
 import { PokeDetails } from '../../components/Pokedetails/PokeDetails';
@@ -8,7 +8,7 @@ export type PokemonDetailModalProp = {
     modalWrapperStyles?: CSSProperties;
     showModal: boolean;
     pokemonDetails: GetPokemonDetailReturn | null;
-}
+};
 
 const PokemonDetailModal = ({
     pokemonDetails,
@@ -16,7 +16,7 @@ const PokemonDetailModal = ({
 }: PokemonDetailModalProp) => (
     <Modal {...rest}>
         <PokeDetails pokemonDetails={pokemonDetails} />
-    </Modal >
+    </Modal>
 );
 
 export default PokemonDetailModal;

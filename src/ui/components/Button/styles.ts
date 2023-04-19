@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import Theme from "../../../styles/theme";
+import styled from 'styled-components';
+import Theme from '../../../styles/theme';
 
 export const ButtonContainer = styled.button`
     padding: 7px;
@@ -14,9 +14,9 @@ export const ButtonContainer = styled.button`
     &:hover {
         background: ${Theme.colors.grayScale.bgCard};
         color: ${Theme.colors.font.primary};
-    };
+    }
 
     &:active {
         scale: 0.95;
-    };
+    }
 `;

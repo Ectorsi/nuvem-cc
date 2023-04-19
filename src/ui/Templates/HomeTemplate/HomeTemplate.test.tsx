@@ -1,5 +1,4 @@
-import React from "react";
-import { render, screen } from "@testing-library/react";
+import { render, screen } from '@testing-library/react';
 
 import HomeTemplate, { HomeTemplateProps } from './HomeTemplate';
 
@@ -14,10 +13,10 @@ const MockHomeTemplate: HomeTemplateProps = {
             {
                 name: 'Pikachu2',
                 url: 'www.test.com.br',
-            }
+            },
         ],
         pokeCard: {
-            handleSelectPokemon: jest.fn()
+            handleSelectPokemon: jest.fn(),
         },
         errorFetchPokemons: '',
         loadingPokemonsList: false,
@@ -43,7 +42,7 @@ const MockHomeTemplate: HomeTemplateProps = {
                 {
                     value: 'Value Test2',
                     label: 'Label test2',
-                }
+                },
             ],
         },
         selectBoxLocation: {
@@ -68,26 +67,27 @@ const MockHomeTemplate: HomeTemplateProps = {
         abilities: [
             {
                 ability: {
-                    name: "static",
-                    url: "https://pokeapi.co/api/v2/ability/9/"
+                    name: 'static',
+                    url: 'https://pokeapi.co/api/v2/ability/9/',
                 },
                 is_hidden: false,
-                slot: 1
+                slot: 1,
             },
             {
                 ability: {
-                    name: "lightning-rod",
-                    url: "https://pokeapi.co/api/v2/ability/31/"
+                    name: 'lightning-rod',
+                    url: 'https://pokeapi.co/api/v2/ability/31/',
                 },
                 is_hidden: true,
-                slot: 3
+                slot: 3,
             },
         ],
         height: 4,
         sprites: {
-            front_default: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png",
+            front_default:
+                'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png',
         },
-        weight: 60
+        weight: 60,
     },
     showModal: false,
     handleShowModal: jest.fn(),

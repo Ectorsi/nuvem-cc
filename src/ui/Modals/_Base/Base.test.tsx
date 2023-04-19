@@ -1,5 +1,4 @@
-import React from "react";
-import { render, screen } from "@testing-library/react";
+import { render, screen } from '@testing-library/react';
 
 import { Modal } from './Base';
 
@@ -8,7 +7,7 @@ const MockModalProps = {
     showModal: true,
     handleShowModal: jest.fn(),
     modalWrapperStyles: {},
-}
+};
 
 describe('PageTitle unit test', () => {
     it('should be able to mach snapshot', () => {

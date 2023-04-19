@@ -1,6 +1,5 @@
-import React from 'react';
-import HomeTemplate from "../../Templates/HomeTemplate/HomeTemplate";
-import * as S from "./styles";
+import HomeTemplate from '../../Templates/HomeTemplate/HomeTemplate';
+import * as S from './styles';
 import { useSearch } from '../../../hooks/useSearch';
 import { useRegion } from '../../../hooks/useGetPokemonByRegion';
 import { useInfiniteScroll } from '../../../hooks/useInfiniteScroll';
@@ -14,19 +13,17 @@ const HomePage = () => {
         setPokemonList,
         pokemonListInitalState,
         loadingPokemonsList,
-        errorFetchPokemons
+        errorFetchPokemons,
     } = useFetchPokemons();
     const {
         handleSelectPokemon,
-        isPokemonDetailsLoading,
-        errorFetchPokemonDetails,
         pokemonDetails,
         handleShowModal,
-        isPokemonDetailModalOpen
+        isPokemonDetailModalOpen,
     } = useFetchPokemonDetails();
     const { handleSearch, search, error } = useSearch({
         pokemonListInitalState,
-        setPokemonList
+        setPokemonList,
     });
 
     const {
@@ -40,13 +37,13 @@ const HomePage = () => {
         selectedArea,
         handleChangeArea,
         filterError,
-        cleanFilters
+        cleanFilters,
     } = useRegion({
         setPokemonList,
         pokemonListInitalState,
     });
 
-    const { currentPage } = useInfiniteScroll({ fetchPokemons });
+    useInfiniteScroll({ fetchPokemons });
 
     return (
         <S.Container>
@@ -56,10 +53,9 @@ const HomePage = () => {
                     pokemonList: pokemonList ?? [],
                     pokeCard: {
                         handleSelectPokemon: handleSelectPokemon,
-
                     },
                     loadingPokemonsList,
-                    errorFetchPokemons
+                    errorFetchPokemons,
                 }}
                 pokemonDetails={pokemonDetails}
                 showModal={isPokemonDetailModalOpen}
@@ -103,11 +99,11 @@ const HomePage = () => {
                         error: filterError ?? undefined,
                         disabled: !selectedLocation,
                     },
-                    cleanFilters
+                    cleanFilters,
                 }}
             />
         </S.Container>
-    )
+    );
 };
 
 export default HomePage;

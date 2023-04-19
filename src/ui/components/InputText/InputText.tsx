@@ -1,4 +1,4 @@
-import React, { ChangeEvent, InputHTMLAttributes } from 'react';
+import { ChangeEvent, InputHTMLAttributes } from 'react';
 import * as S from './styles';
 
 export type InputTextProps = {
@@ -8,7 +8,13 @@ export type InputTextProps = {
     error?: string;
 } & InputHTMLAttributes<HTMLInputElement>;
 
-const InputText = ({ placeholder, value, onChange, error, ...rest }: InputTextProps) => {
+const InputText = ({
+    placeholder,
+    value,
+    onChange,
+    error,
+    ...rest
+}: InputTextProps) => {
     return (
         <>
             <S.InputContainer

@@ -1,5 +1,4 @@
-import React from "react";
-import { render } from "@testing-library/react";
+import { render } from '@testing-library/react';
 
 import PokeFilter, { PokeFilterProps } from './PokeFilter';
 
@@ -44,7 +43,6 @@ const mockPokeFilter: PokeFilterProps = {
             { value: 'Option2', label: 'Option2' },
         ],
     },
-
 };
 
 describe('PokeFilter unit test', () => {

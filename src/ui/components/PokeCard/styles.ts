@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import Theme from "../../../styles/theme";
+import styled from 'styled-components';
+import Theme from '../../../styles/theme';
 
 export const Container = styled.button`
     background-color: ${Theme.colors.grayScale.bgCard};

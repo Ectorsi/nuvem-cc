@@ -1,10 +1,13 @@
 import { useCallback, useEffect, useState } from 'react';
 import { GetPokemonsParams } from '../domains/pokemon/types';
 
-
 const getScrollTop = (el: Document | Element) => {
     if (el === document || el === document.body) {
-        return Math.max(window.scrollY, document.documentElement.scrollTop, document.body.scrollTop);
+        return Math.max(
+            window.scrollY,
+            document.documentElement.scrollTop,
+            document.body.scrollTop
+        );
     }
     return (el as Element).scrollTop;
 };
@@ -17,10 +20,9 @@ const getClientHeight = (el: Document | Element) =>
     (el as Element).clientHeight ||
     Math.max(document.documentElement.clientHeight, document.body.clientHeight);
 
-
 type UseInfiniteScroll = {
-    fetchPokemons: (params: GetPokemonsParams) => Promise<void>
-}
+    fetchPokemons: (params: GetPokemonsParams) => Promise<void>;
+};
 
 export function useInfiniteScroll({ fetchPokemons }: UseInfiniteScroll) {
     const [isFetching, setIsFetching] = useState(false);
@@ -53,7 +55,7 @@ export function useInfiniteScroll({ fetchPokemons }: UseInfiniteScroll) {
             });
             setIsFetching(false);
         }
-    }, [isFetching])
+    }, [isFetching]);
 
     useEffect(() => {
         window.addEventListener('scroll', isScrolling, true);

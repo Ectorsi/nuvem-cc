@@ -1,9 +1,8 @@
-import React from "react";
-import { fireEvent, render, screen } from "@testing-library/react";
+import { fireEvent, render, screen } from '@testing-library/react';
 import PokeCard from './PokeCard';
 
 const mockPokeCard = {
-    name: "pikachu",
+    name: 'pikachu',
     handleShowModal: jest.fn(),
     handleSelectPokemon: jest.fn(),
 };

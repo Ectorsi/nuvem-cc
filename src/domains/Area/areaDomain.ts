@@ -1,16 +1,17 @@
-import { BaseApi } from "../domains";
-import { Pokemon } from "../pokemon/types";
+import { BaseApi } from '../domains';
+import { Pokemon } from '../pokemon/types';
 
 export type GetPokemonsByNameParams = {
     name: string;
-}
+};
 
 type Items = {
-    pokemon: Pokemon,
-}
+    pokemon: Pokemon;
+};
 
 export type GetPokemonsByNameReturn = {
-    pokemon_encounters: Items[],
-}
+    pokemon_encounters: Items[];
+};
 
-export const getPokemonsByName = ({ name }: GetPokemonsByNameParams) => BaseApi.get<GetPokemonsByNameReturn>(`/location-area/${name}`);
+export const getPokemonsByName = ({ name }: GetPokemonsByNameParams) =>
+    BaseApi.get<GetPokemonsByNameReturn>(`/location-area/${name}`);

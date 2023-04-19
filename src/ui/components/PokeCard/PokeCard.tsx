@@ -1,15 +1,18 @@
-import React, { memo } from "react";
-import * as S from "./styles";
+import { memo } from 'react';
+import * as S from './styles';
 
 export type PokeCardProps = {
     name: string;
-    handleSelectPokemon: (pokemonName: string) => void
+    handleSelectPokemon: (pokemonName: string) => void;
 };
 
 const PokeCard = ({ name, handleSelectPokemon }: PokeCardProps) => (
-    <S.Container type="button" onClick={() => {
-        handleSelectPokemon(name);
-    }}>
+    <S.Container
+        type="button"
+        onClick={() => {
+            handleSelectPokemon(name);
+        }}
+    >
         <h1>{name}</h1>
     </S.Container>
 );

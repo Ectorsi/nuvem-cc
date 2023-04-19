@@ -1,8 +1,8 @@
-import styled from "styled-components";
-import { SelectProps } from "./SelectBox";
-import Theme from "../../../styles/theme";
+import styled from 'styled-components';
+import { SelectProps } from './SelectBox';
+import Theme from '../../../styles/theme';
 
-type SelectBoxStyledProps = Pick<SelectProps, 'error'>
+type SelectBoxStyledProps = Pick<SelectProps, 'error'>;
 
 export const Wrapper = styled.div`
     display: flex;
@@ -12,7 +12,7 @@ export const Wrapper = styled.div`
 `;
 
 export const SelectContainer = styled.select<SelectBoxStyledProps>`
-    border: ${({ error }) => error ? '1px solid red' : '1px solid #000'};
+    border: ${({ error }) => (error ? '1px solid red' : '1px solid #000')};
     border-radius: 4px;
     padding: 8px;
     width: 240px;
