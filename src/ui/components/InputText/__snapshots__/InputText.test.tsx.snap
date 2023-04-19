@@ -1,9 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`InputText unit test should be able to show the InputText's label and input 1`] = `
-<label
-  class="sc-gueYoa kDGSMJ"
->
-  Test
-</label>
+<input
+  class="sc-beqWaB nsiWQ"
+  placeholder="Test"
+  type="text"
+  value="Test"
+/>
 `;

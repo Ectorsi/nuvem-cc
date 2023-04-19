@@ -1,9 +1,32 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`SelectBox unit test should be able to show the SelectBox's label and input 1`] = `
-<label
-  class="sc-gueYoa kDGSMJ"
+<div
+  class="sc-beqWaB gMwkTI"
 >
-  LabelTest
-</label>
+  <label
+    class="sc-dmqHEX hObCgG"
+  >
+    LabelTest
+  </label>
+  <select
+    class="sc-gueYoa jRobxD"
+  >
+    <option
+      value=""
+    >
+      PlaceholderTest
+    </option>
+    <option
+      value="Option1"
+    >
+      Option1
+    </option>
+    <option
+      value="Option2"
+    >
+      Option2
+    </option>
+  </select>
+</div>
 `;

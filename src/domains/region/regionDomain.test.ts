@@ -7,13 +7,11 @@ describe('regionDomain', () => {
             expect(regions.data.results).toHaveLength(10);
         });
     });
-});
-
-describe('regionDomain', () => {
     describe('getRegionByName', () => {
-        it('should return a region', async () => {
-            const region = await getRegionByName({ name: 'kanto' });
-            expect(region.data.main_generation.url).toBe('https://pokeapi.co/api/v2/generation/1/');
+        it('should return a list of locations', async () => {
+            const result = await getRegionByName({ name: 'kanto' });
+            expect(result.data.locations).toHaveLength(93);
         });
     });
 });
+

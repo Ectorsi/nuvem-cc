@@ -1,5 +1,10 @@
-import React, { ChangeEvent, SelectHTMLAttributes } from 'react';
+import React, { ChangeEvent } from 'react';
 import * as S from './styles';
+
+export type Option = {
+    value: string;
+    label: string;
+};
 
 export type SelectProps = {
     label: string;
@@ -7,25 +12,26 @@ export type SelectProps = {
     value: string | undefined;
     onChange: (e: ChangeEvent<HTMLSelectElement>) => void;
     error?: string;
-    options: Array<{ value: string, label: string }>;
+    options: Option[];
+    disabled?: boolean;
 };
-
-const SelectBox = ({ label, placeholder, value, onChange, error, options, ...rest }: SelectProps) => {
+// TODO Verificar se precisarei desse label
+const SelectBox = ({ label, placeholder, error, value, onChange, options, disabled }: SelectProps) => {
     return (
-        <>
-            <S.SelectLabel>{label}</S.SelectLabel>
-            <S.InputContainer
+        <S.Wrapper>
+            <S.Label>{label}</S.Label>
+            <S.SelectContainer
+                disabled={disabled}
                 value={value}
                 onChange={onChange}
-                {...rest}
             >
                 <option value="">{placeholder}</option>
                 {options.map((option) => (
                     <option key={option.value} value={option.value}>{option.label}</option>
                 ))}
-            </S.InputContainer>
-            {error && <div>{error}</div>}
-        </>
+            </S.SelectContainer>
+            {!!error && <S.Error>{error}</S.Error>}
+        </S.Wrapper>
     );
 };
 

@@ -22,7 +22,6 @@ const useFetchPokemonDetails = (): UseFetchPokemonDetailsReturn => {
             const { data } = await getPokemonDetails({ pokemonName })
             setPokemonDetails(data)
         } catch (errorFetchPokemonDetails) {
-            console.error(errorFetchPokemonDetails)
             setErrorFetchPokemonDetails('Error ao carregar os detalhes do pokemon')
         } finally {
             setIsPokemonDetailsLoading(false);

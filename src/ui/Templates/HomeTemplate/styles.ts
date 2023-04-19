@@ -7,4 +7,6 @@ export const Container = styled.div`
     height: 100vh;
     max-width: 997px;
     padding: 20px;
+
+    overflow: auto;
 `;

@@ -23,14 +23,14 @@ const MockHomeTemplate: HomeTemplateProps = {
         loadingPokemonsList: false,
     },
     pokeFilter: {
+        cleanFilters: jest.fn(),
         inputTextProps: {
-            label: 'Pesquisar',
             placeholder: 'Pesquisar',
             onChange: jest.fn(),
             value: 'Pikachu',
             error: '',
         },
-        selectBoxProps: {
+        selectBoxRegion: {
             label: 'Tipo',
             placeholder: 'Selecione um tipo',
             value: 'Teste',
@@ -45,6 +45,22 @@ const MockHomeTemplate: HomeTemplateProps = {
                     label: 'Label test2',
                 }
             ],
+        },
+        selectBoxLocation: {
+            label: 'Geração',
+            placeholder: 'Selecione uma geração',
+            value: '',
+            onChange: jest.fn(),
+            options: [],
+            error: '',
+        },
+        selectBoxAreas: {
+            label: 'Espécie',
+            placeholder: 'Selecione uma espécie',
+            value: '',
+            onChange: jest.fn(),
+            options: [],
+            error: '',
         },
     },
     pokemonDetails: {
@@ -97,7 +113,7 @@ describe('HomeTemplate integration test', () => {
 
     it('should be able to show the PokeFilter', () => {
         render(<HomeTemplate {...MockHomeTemplate} />);
-        const pokeFilter = screen.getAllByText(/Pesquisar/i)[0];
+        const pokeFilter = screen.getByPlaceholderText(/Pesquisar/i);
         expect(pokeFilter).toBeInTheDocument();
     });
 
@@ -113,4 +129,3 @@ describe('HomeTemplate integration test', () => {
         expect(modal).toBeInTheDocument();
     });
 });
-

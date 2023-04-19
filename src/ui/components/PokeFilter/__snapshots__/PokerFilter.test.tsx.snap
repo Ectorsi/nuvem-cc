@@ -2,42 +2,115 @@
 
 exports[`PokeFilter unit test should be able to match snapshot 1`] = `
 <div
-  class="sc-beqWaB hJLspP"
+  class="sc-beqWaB hiqCdz"
 >
-  <label
-    class="sc-dmqHEX eRUUrI"
-  >
-    Test
-  </label>
+  <h2>
+    Pesquise o Pokemon pelo nome
+  </h2>
   <input
-    class="sc-gueYoa lcbmne"
+    class="sc-dmqHEX jGUQHX"
     placeholder="Test"
     type="text"
     value="Test"
   />
-  <label
-    class="sc-jTrPJq bUrBxG"
+  <h2>
+    Filtrar pokemons por região/área
+  </h2>
+  <p>
+    Para filtrar um pokemon por regiao/area, você deve preencher todos os filtros!
+  </p>
+  <div
+    class="sc-gueYoa ienTpA"
   >
-    LabelTest
-  </label>
-  <select
-    class="sc-eDDNvR hIqGFP"
-  >
-    <option
-      value=""
+    <div
+      class="sc-jTrPJq kpTOXV"
     >
-      PlaceholderTest
-    </option>
-    <option
-      value="Option1"
+      <label
+        class="sc-iAEyYk kSEbZN"
+      >
+        LabelTest
+      </label>
+      <select
+        class="sc-gLDzan fjWcfF"
+      >
+        <option
+          value=""
+        >
+          PlaceholderTest
+        </option>
+        <option
+          value="Option1"
+        >
+          Option1
+        </option>
+        <option
+          value="Option2"
+        >
+          Option2
+        </option>
+      </select>
+    </div>
+    <div
+      class="sc-jTrPJq kpTOXV"
     >
-      Option1
-    </option>
-    <option
-      value="Option2"
+      <label
+        class="sc-iAEyYk kSEbZN"
+      >
+        LabelTest
+      </label>
+      <select
+        class="sc-gLDzan fjWcfF"
+      >
+        <option
+          value=""
+        >
+          PlaceholderTest
+        </option>
+        <option
+          value="Option1"
+        >
+          Option1
+        </option>
+        <option
+          value="Option2"
+        >
+          Option2
+        </option>
+      </select>
+    </div>
+    <div
+      class="sc-jTrPJq kpTOXV"
     >
-      Option2
-    </option>
-  </select>
+      <label
+        class="sc-iAEyYk kSEbZN"
+      >
+        LabelTest
+      </label>
+      <select
+        class="sc-gLDzan fjWcfF"
+      >
+        <option
+          value=""
+        >
+          PlaceholderTest
+        </option>
+        <option
+          value="Option1"
+        >
+          Option1
+        </option>
+        <option
+          value="Option2"
+        >
+          Option2
+        </option>
+      </select>
+    </div>
+    <button
+      class="sc-qRumB ekebwZ"
+    >
+      Limpar filtros
+    </button>
+  </div>
 </div>
 `;

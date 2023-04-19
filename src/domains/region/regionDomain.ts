@@ -14,10 +14,13 @@ export type GetRegionByNameParams = {
     name: string;
 }
 
+type Location = {
+    name: string,
+    url: string
+};
+
 export type GetRegionByNameReturn = {
-    main_generation: {
-        url: string;
-    }
+    locations: Location[],
 }
 
 export const getRegion = () => BaseApi.get<GetRegionReturn>(`/region`);

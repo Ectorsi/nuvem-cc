@@ -1,0 +1,126 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HomeTemplate integration test should be able to show all components 1`] = `
+<div
+  class="sc-gueYoa gkUGJR"
+>
+  <h1
+    class="sc-beqWaB ekCqDZ"
+  >
+    Pokedex
+  </h1>
+  <div
+    class="sc-fsQiph eyQCUQ"
+  >
+    <h2>
+      Pesquise o Pokemon pelo nome
+    </h2>
+    <input
+      class="sc-jsMahE dPXcAO"
+      placeholder="Pesquisar"
+      type="text"
+      value="Pikachu"
+    />
+    <h2>
+      Filtrar pokemons por região/área
+    </h2>
+    <p>
+      Para filtrar um pokemon por regiao/area, você deve preencher todos os filtros!
+    </p>
+    <div
+      class="sc-qRumB eTaYHB"
+    >
+      <div
+        class="sc-csCMJt kjisHW"
+      >
+        <label
+          class="sc-brKeYL cVRNkM"
+        >
+          Tipo
+        </label>
+        <select
+          class="sc-fbJfA hFeYFK"
+        >
+          <option
+            value=""
+          >
+            Selecione um tipo
+          </option>
+          <option
+            value="Value Test"
+          >
+            Label test
+          </option>
+          <option
+            value="Value Test2"
+          >
+            Label test2
+          </option>
+        </select>
+      </div>
+      <div
+        class="sc-csCMJt kjisHW"
+      >
+        <label
+          class="sc-brKeYL cVRNkM"
+        >
+          Geração
+        </label>
+        <select
+          class="sc-fbJfA hFeYFK"
+        >
+          <option
+            value=""
+          >
+            Selecione uma geração
+          </option>
+        </select>
+      </div>
+      <div
+        class="sc-csCMJt kjisHW"
+      >
+        <label
+          class="sc-brKeYL cVRNkM"
+        >
+          Espécie
+        </label>
+        <select
+          class="sc-fbJfA hFeYFK"
+        >
+          <option
+            value=""
+          >
+            Selecione uma espécie
+          </option>
+        </select>
+      </div>
+      <button
+        class="sc-hAtEyd bfJMZR"
+      >
+        Limpar filtros
+      </button>
+    </div>
+  </div>
+  <div
+    class="sc-dmqHEX bpogQo"
+    id="list-items"
+  >
+    <button
+      class="sc-jTrPJq ggUHYc"
+      type="button"
+    >
+      <h1>
+        Pikachu
+      </h1>
+    </button>
+    <button
+      class="sc-jTrPJq ggUHYc"
+      type="button"
+    >
+      <h1>
+        Pikachu2
+      </h1>
+    </button>
+  </div>
+</div>
+`;

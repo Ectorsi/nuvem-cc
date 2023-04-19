@@ -1,22 +1,29 @@
 import { Dispatch, SetStateAction } from "react";
 import { GetPokemonDetailReturn, Pokemon } from "../domains/pokemon/types";
 
-type normalizedRegion = {
+type NormalizedFilters = {
     value: string;
     label: string;
 }
 
 export type UseRegionReturn = {
     selectedRegion: string | undefined
-    region: normalizedRegion[]
+    selectedLocation: string | undefined
+    selectedArea: string | undefined
+    regionList: NormalizedFilters[]
+    locationList: NormalizedFilters[]
+    areaList: NormalizedFilters[]
     loading: boolean
     filterError: string | null
     handleChangeRegion: (value: string) => void
+    handleChangeLocation: (value: string) => void
+    handleChangeArea: (value: string) => void
+    cleanFilters: () => void
 }
 
 export type UseRegionProps = {
     pokemonListInitalState: Pokemon[] | null
-    setPokemonList: React.Dispatch<React.SetStateAction<Pokemon[] | null>>
+    setPokemonList: Dispatch<SetStateAction<Pokemon[] | null>>
 }
 
 export type UseFetchPokemonDetailsReturn = {
