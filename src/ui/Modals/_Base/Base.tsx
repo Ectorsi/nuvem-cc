@@ -14,13 +14,10 @@ export const Modal = ({
     handleShowModal,
     showModal,
 }: ModalBaseProps) => {
-    if (!showModal) {
-        return null;
-    }
-
+    if (!showModal) return null;
     return (
         <ReactPortal wrapperId="react-portal-modal-container">
-            <S.Overlay hidden={!showModal} />
+            <S.Overlay hidden={!showModal} onClick={handleShowModal} />
             <S.Container>
                 <S.CloseButton onClick={handleShowModal}>x</S.CloseButton>
                 <S.Content>{children}</S.Content>

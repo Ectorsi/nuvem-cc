@@ -2,7 +2,7 @@
 
 exports[`PokeDetails unit test should be able to show the pokemon details 1`] = `
 <div
-  class="sc-beqWaB iXLpci"
+  class="sc-beqWaB kfLJyB"
 >
   <h1
     class="sc-gueYoa bHtBpd"
@@ -15,13 +15,13 @@ exports[`PokeDetails unit test should be able to show the pokemon details 1`] = 
     src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png"
   />
   <div
-    class="sc-eDDNvR eKSmPI"
+    class="sc-eDDNvR ooaGM"
   >
     <div
-      class="sc-gLDzan cmbECg"
+      class="sc-gLDzan ijGLLD"
     >
       <label
-        class="sc-hLseeU gnmaPz"
+        class="sc-hLseeU ircsxu"
       >
         Habilidades
       </label>

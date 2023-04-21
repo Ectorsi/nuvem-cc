@@ -8,13 +8,8 @@ export const Container = styled.div`
     align-items: flex-start;
     box-shadow: rgba(100, 100, 111, 0.3) 0px 7px 29px 0px;
     background-color: white;
-    border: 2px solid ${Theme.colors.grayScale.bgCardBorder};
-    border-radius: 12px;
-    position: absolute;
-    width: 60%;
-    top: 70px;
-    left: calc(50% - 30%);
-    bottom: 70px;
+    width: 100%;
+    height: 100%;
 `;
 
 export const TitleDetails = styled.h1`
@@ -37,12 +32,22 @@ export const Image = styled.img`
 export const AbilitiesLabel = styled.label`
     font-weight: bold;
     letter-spacing: 3px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    flex-wrap: wrap;
 `;
 
 export const Caracteristics = styled.div`
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    
+    @media screen and (max-width: 768px) {
+        flex-wrap: wrap;
+    };
 
     background-color: ${Theme.colors.grayScale.bgCard};
 
@@ -62,6 +67,10 @@ export const AbilitiesCaracteristics = styled.div`
     justify-content: flex-start;
 
     background-color: ${Theme.colors.grayScale.bgCard};
+
+    @media screen and (max-width: 768px) {
+        align-items: center;
+    };
 
     width: 100%;
     height: 100%;

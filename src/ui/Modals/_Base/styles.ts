@@ -1,6 +1,7 @@
 import styled from 'styled-components';
+import Theme from '../../../styles/theme';
 
-export const Overlay = styled.div<{
+export const Overlay = styled.button<{
     hidden?: boolean;
 }>`
     width: 100%;
@@ -14,9 +15,9 @@ export const Overlay = styled.div<{
 `;
 
 export const Container = styled.div`
-    /* background: #fff; */
     max-height: 95%;
     height: fit-content;
+    border: 2px solid ${Theme.colors.grayScale.bgCardBorder};
     border-radius: 10px;
     position: fixed;
     overflow: hidden;
@@ -27,26 +28,23 @@ export const Container = styled.div`
     top: 0;
     margin: auto;
     z-index: 2;
-    min-width: 10%;
-    max-width: 80%;
+    width: 50%;
 `;
 
 export const Content = styled.div`
     width: 100%;
-    height: 520px;
     position: relative;
     overflow: auto;
-    padding: 10px;
 `;
 
 export const CloseButton = styled.button`
     position: absolute;
-    top: 40px;
-    right: 100px;
+    top: 10px;
+    right: 20px;
     border: none;
     background: none;
     cursor: pointer;
     z-index: 9;
-    color: white;
-    font-size: 20px;
+    color: black;
+    font-size: 40px;
 `;

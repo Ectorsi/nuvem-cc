@@ -18,7 +18,7 @@ const useFetchPokemonDetails = (): UseFetchPokemonDetailsReturn => {
         setIsPokemonDetailModalOpen((oldState) => {
             return !oldState;
         });
-    }, [setIsPokemonDetailModalOpen, setIsPokemonDetailModalOpen]);
+    }, [setIsPokemonDetailModalOpen]);
 
     const handleSelectPokemon = useCallback(
         async (pokemonName: string) => {
