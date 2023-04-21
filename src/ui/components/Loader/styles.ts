@@ -23,8 +23,5 @@ export const Spinner = styled.div`
     width: 60px;
     height: 60px;
     animation: ${spin} 1s linear infinite;
-    position: absolute;
-    top: calc(50% - 40px);
-    left: calc(50% - 40px);
     transform: translateZ(0);
 `;

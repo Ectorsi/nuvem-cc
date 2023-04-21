@@ -1,7 +1,7 @@
 import * as S from './styles';
 import PokeCard, { PokeCardProps } from '../PokeCard/PokeCard';
 import { Pokemon } from '../../../domains/pokemon/types';
-import { Spinner } from '../Loader/styles';
+import { Loader } from '../Loader/Loader';
 
 export type PokeListProps = {
     pokemonList: Pokemon[] | [];
@@ -21,7 +21,6 @@ const PokeList = ({
     return (
         <S.Container id="list-items">
             {errorFetchPokemons && <S.Error>{errorFetchPokemons}</S.Error>}
-            {loadingPokemonsList && <Spinner />}
             {errorSearchPokemons && <S.Error>Ops, não encontramos nem um Pokemon 😶</S.Error>}
             {pokemonList.length > 0 && !(errorSearchPokemons || errorFetchPokemons) &&
                 pokemonList.map((pokemon) => (
@@ -31,6 +30,7 @@ const PokeList = ({
                         {...pokeCard}
                     />
                 ))}
+            {loadingPokemonsList && <Loader small />}
         </S.Container>
     );
 };
