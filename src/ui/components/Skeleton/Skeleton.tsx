@@ -6,7 +6,7 @@ export type SkeletonProps = {
 };
 
 const Skeleton = ({ size }: SkeletonProps) => (
-    <S.SkeletonContainer size={size} />
+    <S.SkeletonContainer data-testid="skeleton" size={size} />
 );
 
 export default Skeleton;

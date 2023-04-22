@@ -29,7 +29,6 @@ export const SkeletonContainer = styled.div<SkeletonProps>`
         width: 40%;
         height: 30px;
         align-self: center;
-        ${!!size && skeletonModifiers[size]}
-
+        ${!!size && skeletonModifiers[size]};
     `}
 `;
