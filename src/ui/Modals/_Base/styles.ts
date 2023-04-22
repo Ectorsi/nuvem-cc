@@ -29,12 +29,15 @@ export const Container = styled.div`
     margin: auto;
     z-index: 2;
     width: 50%;
+    max-height: 45%;
 `;
 
 export const Content = styled.div`
     width: 100%;
     position: relative;
     overflow: auto;
+    min-height: 260px;
+    height: 380px;
 `;
 
 export const CloseButton = styled.button`

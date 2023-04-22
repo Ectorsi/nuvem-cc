@@ -93,6 +93,7 @@ const MockHomeTemplate: HomeTemplateProps = {
     },
     showModal: false,
     handleShowModal: jest.fn(),
+    isPokemonDetailsLoading: false,
 };
 
 describe('HomeTemplate integration test', () => {

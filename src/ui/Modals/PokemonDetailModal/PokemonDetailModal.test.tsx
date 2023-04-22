@@ -33,6 +33,7 @@ const MockPokemonDetailModalProps = {
         },
         weight: 60,
     },
+    isPokemonDetailsLoading: false,
 };
 
 describe('PageTitle unit test', () => {

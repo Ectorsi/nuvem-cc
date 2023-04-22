@@ -6,8 +6,7 @@ import { UseFetchPokemonDetailsReturn } from './types';
 const useFetchPokemonDetails = (): UseFetchPokemonDetailsReturn => {
     const [pokemonDetails, setPokemonDetails] =
         useState<GetPokemonDetailReturn | null>(null);
-    const [isPokemonDetailsLoading, setIsPokemonDetailsLoading] =
-        useState(false);
+    const [loadingDetails, setLoadingDetails] = useState(true);
     const [isPokemonDetailModalOpen, setIsPokemonDetailModalOpen] =
         useState(false);
     const [errorFetchPokemonDetails, setErrorFetchPokemonDetails] = useState<
@@ -22,26 +21,27 @@ const useFetchPokemonDetails = (): UseFetchPokemonDetailsReturn => {
 
     const handleSelectPokemon = useCallback(
         async (pokemonName: string) => {
+            setLoadingDetails(true);
             handleShowModal();
-            setIsPokemonDetailsLoading(true);
             try {
                 const { data } = await getPokemonDetails({ pokemonName });
                 setPokemonDetails(data);
+                setLoadingDetails(false);
             } catch (errorFetchPokemonDetails) {
                 setErrorFetchPokemonDetails(
                     'Error ao carregar os detalhes do pokemon'
                 );
             } finally {
-                setIsPokemonDetailsLoading(false);
+                setLoadingDetails(false);
             }
         },
-        [handleShowModal, setIsPokemonDetailsLoading, getPokemonDetails]
+        [handleShowModal, setLoadingDetails, getPokemonDetails]
     );
 
     return {
         pokemonDetails,
         handleSelectPokemon,
-        isPokemonDetailsLoading,
+        isPokemonDetailsLoading: loadingDetails,
         handleShowModal,
         isPokemonDetailModalOpen,
         errorFetchPokemonDetails,

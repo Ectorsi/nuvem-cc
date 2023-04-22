@@ -20,6 +20,7 @@ const HomePage = () => {
         pokemonDetails,
         handleShowModal,
         isPokemonDetailModalOpen,
+        isPokemonDetailsLoading,
     } = useFetchPokemonDetails();
     const { handleSearch, search, error, clearSearch, isSearchLoading } = useSearch({
         pokemonListInitalState,
@@ -104,6 +105,7 @@ const HomePage = () => {
                     cleanFilters,
                     clearSearch,
                 }}
+                isPokemonDetailsLoading={isPokemonDetailsLoading}
             />
         </S.Container>
     );

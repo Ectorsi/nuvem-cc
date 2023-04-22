@@ -8,15 +8,19 @@ export type PokemonDetailModalProp = {
     modalWrapperStyles?: CSSProperties;
     showModal: boolean;
     pokemonDetails: GetPokemonDetailReturn | null;
+    isPokemonDetailsLoading: boolean;
 };
 
 const PokemonDetailModal = ({
     pokemonDetails,
+    isPokemonDetailsLoading,
     ...rest
 }: PokemonDetailModalProp) => (
     <Modal {...rest}>
-        <PokeDetails pokemonDetails={pokemonDetails} />
+        <PokeDetails
+            pokemonDetails={pokemonDetails}
+            isPokemonDetailsLoading={isPokemonDetailsLoading} />
     </Modal>
-);
+)
 
 export default PokemonDetailModal;

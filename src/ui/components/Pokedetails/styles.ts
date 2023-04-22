@@ -20,6 +20,7 @@ export const TitleDetails = styled.h1`
     justify-content: flex-start;
 
     height: 70px;
+    width: 100%;
 `;
 
 export const Image = styled.img`

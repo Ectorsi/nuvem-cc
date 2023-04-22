@@ -15,6 +15,7 @@ export type HomeTemplateProps = {
     showModal: boolean;
     handleShowModal: () => void;
     pokeFilter: PokeFilterProps;
+    isPokemonDetailsLoading: boolean;
 };
 
 const HomeTemplate = ({
@@ -24,6 +25,7 @@ const HomeTemplate = ({
     showModal,
     handleShowModal,
     pokeFilter,
+    isPokemonDetailsLoading,
 }: HomeTemplateProps) => {
     return (
         <>
@@ -42,6 +44,7 @@ const HomeTemplate = ({
                 handleShowModal={handleShowModal}
                 showModal={showModal}
                 pokemonDetails={pokemonDetails}
+                isPokemonDetailsLoading={isPokemonDetailsLoading}
             />
         </>
     );

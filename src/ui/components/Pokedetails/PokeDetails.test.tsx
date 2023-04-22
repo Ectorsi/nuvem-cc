@@ -30,6 +30,7 @@ const mockpokemonDetails = {
         },
         weight: 60,
     },
+    isPokemonDetailsLoading: false,
 };
 
 describe('PokeDetails unit test', () => {
