@@ -2,7 +2,7 @@
 
 exports[`PokeCard unit test should be able to show the pokemon name 1`] = `
 <button
-  class="sc-beqWaB dgRjyp"
+  class="sc-beqWaB dQYWhm"
   type="button"
 >
   <h1>

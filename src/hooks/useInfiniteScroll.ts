@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useState } from 'react';
 import { GetPokemonsParams } from '../domains/pokemon/types';
+import useFetchPokemons from './UseFetchPokemons';
 
 const getScrollTop = (el: Document | Element) => {
     if (el === document || el === document.body) {
@@ -24,7 +25,11 @@ type UseInfiniteScroll = {
     fetchPokemons: (params: GetPokemonsParams) => Promise<void>;
 };
 
+/**
+ * `useInfiniteScroll` É um hook customizado que viabiliza o uso de scroll infinito.
+ */
 export function useInfiniteScroll({ fetchPokemons }: UseInfiniteScroll) {
+    const { limitOfPokemons } = useFetchPokemons();
     const [isFetching, setIsFetching] = useState(false);
     const [currentPage, setCurrentPage] = useState(0);
 
@@ -50,12 +55,17 @@ export function useInfiniteScroll({ fetchPokemons }: UseInfiniteScroll) {
     useEffect(() => {
         if (isFetching) {
             fetchPokemons({
-                limit: 10,
-                offset: (currentPage + 1) * 10,
+                limit: limitOfPokemons,
+                offset: (currentPage + 1) * limitOfPokemons,
             });
             setIsFetching(false);
         }
-    }, [isFetching]);
+    }, [
+        isFetching,
+        fetchPokemons,
+        setIsFetching,
+        currentPage
+    ]);
 
     useEffect(() => {
         window.addEventListener('scroll', isScrolling, true);

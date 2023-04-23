@@ -14,6 +14,7 @@ const HomePage = () => {
         pokemonListInitalState,
         loadingPokemonsList,
         errorFetchPokemons,
+        limitOfPokemons,
     } = useFetchPokemons();
     const {
         handleSelectPokemon,
@@ -58,6 +59,7 @@ const HomePage = () => {
                     loadingPokemonsList,
                     errorFetchPokemons,
                     errorSearchPokemons: !!error ?? false,
+                    limitOfPokemons,
                 }}
                 pokemonDetails={pokemonDetails}
                 showModal={isPokemonDetailModalOpen}

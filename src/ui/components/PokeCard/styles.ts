@@ -4,8 +4,9 @@ import Theme from '../../../styles/theme';
 export const Container = styled.button`
     background-color: ${Theme.colors.grayScale.bgCard};
     height: 50px;
-    border-radius: 4px;
     border: none;
+    border-bottom: 1px solid #c4c4c4;
+    width: 100%;
 
     &:hover {
         background-color: ${Theme.colors.grayScale.bgCardHover};
@@ -14,11 +15,9 @@ export const Container = styled.button`
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    padding: 10px;
+    padding: 0 10px;
 
     color: ${Theme.colors.font.primary};
     font-weight: 500;
     letter-spacing: 1px;
-
-    margin-top: 15px;
 `;

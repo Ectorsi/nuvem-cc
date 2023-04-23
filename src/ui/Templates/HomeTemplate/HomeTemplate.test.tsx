@@ -2,6 +2,27 @@ import { render, screen } from '@testing-library/react';
 
 import HomeTemplate, { HomeTemplateProps } from './HomeTemplate';
 
+jest.mock('../../../hooks/useVirtualization', () => ({
+    useVirtualScroll: () => ({
+        bottomOffset: {
+            current: 0,
+        },
+        topOffset: {
+            current: 0,
+        },
+        virtualData: [
+            {
+                name: 'Pikachu',
+                url: 'www.test.com.br',
+            },
+            {
+                name: 'Pikachu2',
+                url: 'www.test.com.br',
+            },
+        ],
+    }),
+}));
+
 const MockHomeTemplate: HomeTemplateProps = {
     title: 'Pokedex',
     pokeList: {
@@ -21,6 +42,7 @@ const MockHomeTemplate: HomeTemplateProps = {
         errorFetchPokemons: '',
         loadingPokemonsList: false,
         errorSearchPokemons: false,
+        limitOfPokemons: 25,
     },
     pokeFilter: {
         clearSearch: jest.fn(),
@@ -110,7 +132,7 @@ describe('HomeTemplate integration test', () => {
 
     it('should be able to show the PokeList', () => {
         render(<HomeTemplate {...MockHomeTemplate} />);
-        const pokeList = screen.getAllByText(/Pikachu/i)[0];
+        const pokeList = screen.getAllByText(/pikachu/i)[0];
         expect(pokeList).toBeInTheDocument();
     });
 
@@ -121,14 +143,22 @@ describe('HomeTemplate integration test', () => {
     });
 
     it('should be able to show the PokemonDetails', () => {
-        render(<HomeTemplate {...MockHomeTemplate} />);
+        render(<HomeTemplate {...MockHomeTemplate} isPokemonDetailsLoading={false} showModal={true} />);
         const pokemonDetails = screen.getAllByText(/pikachu/i)[0];
         expect(pokemonDetails).toBeInTheDocument();
     });
 
     it('should be able to show the Modal', () => {
-        render(<HomeTemplate {...MockHomeTemplate} />);
+        render(<HomeTemplate {...MockHomeTemplate} showModal={true} />);
         const modal = screen.getAllByText(/x/i)[0];
         expect(modal).toBeInTheDocument();
+    });
+
+    it('should be able to show the skeleton', () => {
+        render(<HomeTemplate {...MockHomeTemplate} isPokemonDetailsLoading={true} showModal={true} />);
+        const skeleton = screen.getAllByTestId(/skeleton/i)[0];
+        expect(skeleton).toBeInTheDocument();
+        // screen.debug(undefined, 300000);
+        // screen.logTestingPlaygroundURL();
     });
 });

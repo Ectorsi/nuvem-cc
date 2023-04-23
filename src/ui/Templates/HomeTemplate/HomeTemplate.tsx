@@ -32,13 +32,7 @@ const HomeTemplate = ({
             <S.Container>
                 <PageTitle title={title} />
                 <PokeFilter {...pokeFilter} />
-                <PokeList
-                    pokemonList={pokeList.pokemonList}
-                    pokeCard={pokeList.pokeCard}
-                    loadingPokemonsList={pokeList.loadingPokemonsList}
-                    errorFetchPokemons={pokeList.errorFetchPokemons}
-                    errorSearchPokemons={pokeList.errorSearchPokemons}
-                />
+                <PokeList {...pokeList} />
             </S.Container>
             <PokemonDetailModal
                 handleShowModal={handleShowModal}

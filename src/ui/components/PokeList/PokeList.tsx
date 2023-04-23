@@ -2,6 +2,7 @@ import * as S from './styles';
 import PokeCard, { PokeCardProps } from '../PokeCard/PokeCard';
 import { Pokemon } from '../../../domains/pokemon/types';
 import { Loader } from '../Loader/Loader';
+import { useVirtualScroll } from '../../../hooks/useVirtualization';
 
 export type PokeListProps = {
     pokemonList: Pokemon[] | [];
@@ -9,6 +10,7 @@ export type PokeListProps = {
     errorFetchPokemons: string | null;
     errorSearchPokemons: boolean;
     pokeCard: Omit<PokeCardProps, 'name'>;
+    limitOfPokemons: number;
 };
 
 const PokeList = ({
@@ -17,19 +19,32 @@ const PokeList = ({
     loadingPokemonsList,
     errorFetchPokemons,
     errorSearchPokemons,
+    limitOfPokemons,
 }: PokeListProps) => {
+    const { bottomOffset, topOffset, virtualData } = useVirtualScroll({
+        scrollContainerQuery: '#list-items',
+        data: pokemonList,
+        howManyILinesShouldDisplay: limitOfPokemons,
+        lineHeight: 50,
+    });
     return (
         <S.Container id="list-items">
             {errorFetchPokemons && <S.Error>{errorFetchPokemons}</S.Error>}
             {errorSearchPokemons && <S.Error>Ops, não encontramos nem um Pokemon 😶</S.Error>}
-            {pokemonList.length > 0 && !(errorSearchPokemons || errorFetchPokemons) &&
-                pokemonList.map((pokemon) => (
+            <div style={{
+                height: topOffset.current,
+            }} />
+            {!!pokemonList && !(errorSearchPokemons || errorFetchPokemons) &&
+                virtualData.map((pokemon) => (
                     <PokeCard
                         name={pokemon.name}
                         key={pokemon.name}
                         {...pokeCard}
                     />
                 ))}
+            <div style={{
+                height: bottomOffset.current,
+            }} />
             {loadingPokemonsList && <Loader small />}
         </S.Container>
     );

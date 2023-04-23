@@ -12,6 +12,7 @@ const useFetchPokemons = () => {
     const [errorFetchPokemons, setErrorFetchPokemons] = useState<string | null>(
         null
     );
+    const limitOfPokemons = 25;
     const fetchPokemons = useCallback(
         async ({ limit, offset }: GetPokemonsParams) => {
             setLoadingPokemonsList(true);
@@ -48,12 +49,17 @@ const useFetchPokemons = () => {
                 setLoadingPokemonsList(false);
             }
         },
-        []
+        [
+            setPokemonList,
+            setPokemonListInitalState,
+            setLoadingPokemonsList,
+            setErrorFetchPokemons,
+        ]
     );
 
     useEffect(() => {
         fetchPokemons({
-            limit: 10,
+            limit: limitOfPokemons,
             offset: 0,
         });
     }, []);
@@ -65,6 +71,7 @@ const useFetchPokemons = () => {
         setPokemonList,
         pokemonListInitalState,
         fetchPokemons,
+        limitOfPokemons,
     };
 };
 

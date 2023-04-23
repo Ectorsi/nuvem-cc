@@ -17,11 +17,9 @@ separada em hooks customizados assim como aconselha a documentação do react, p
 ## 🤩Sobre o que eu poderia ter feito a mais (Se houvesse mais tempo 😎)
 
 > ### Implementação de codeSplitting e LazeLoading
->
-> ### Virtualização da listagem de pokemons para garantir mais performance
->
+
 > ### Storybook para garantir uma documentação front-end de componentes
->
+
 > ### Testes End-to-end para garantir a integridade a aplicação como um todo
 
 </br>

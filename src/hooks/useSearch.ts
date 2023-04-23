@@ -4,6 +4,9 @@ import { getPokemonDetails } from '../domains/pokemon/pokemonDomain';
 import axios from 'axios';
 import { UseSearchProps } from './types';
 
+/**
+ * `useSearch` É um hook customizado que faz a busca de itens de uma lista.
+ */
 export const useSearch = ({
     setPokemonList,
     pokemonListInitalState,

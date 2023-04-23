@@ -2,6 +2,27 @@ import { render, screen } from '@testing-library/react';
 
 import PokeList, { PokeListProps } from './PokeList';
 
+jest.mock('../../../hooks/useVirtualization', () => ({
+    useVirtualScroll: () => ({
+        bottomOffset: {
+            current: 0,
+        },
+        topOffset: {
+            current: 0,
+        },
+        virtualData: [
+            {
+                name: 'Pikachu',
+                url: 'www.test.com.br',
+            },
+            {
+                name: 'Pikachu2',
+                url: 'www.test.com.br',
+            },
+        ],
+    }),
+}));
+
 const MockPokeListProps: PokeListProps = {
     pokemonList: [
         {
@@ -19,6 +40,7 @@ const MockPokeListProps: PokeListProps = {
     loadingPokemonsList: false,
     errorFetchPokemons: null,
     errorSearchPokemons: false,
+    limitOfPokemons: 25,
 };
 
 describe('PokeList unit test', () => {

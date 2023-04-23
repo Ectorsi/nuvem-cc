@@ -102,11 +102,14 @@ exports[`HomeTemplate integration test should be able to show all components 1`]
     </div>
   </div>
   <div
-    class="sc-dmqHEX cSDXiM"
+    class="sc-dmqHEX lacstC"
     id="list-items"
   >
+    <div
+      style="height: 0px;"
+    />
     <button
-      class="sc-jTrPJq ggUHYc"
+      class="sc-jTrPJq jYEHP"
       type="button"
     >
       <h1>
@@ -114,13 +117,16 @@ exports[`HomeTemplate integration test should be able to show all components 1`]
       </h1>
     </button>
     <button
-      class="sc-jTrPJq ggUHYc"
+      class="sc-jTrPJq jYEHP"
       type="button"
     >
       <h1>
         Pikachu2
       </h1>
     </button>
+    <div
+      style="height: 0px;"
+    />
   </div>
 </div>
 `;
